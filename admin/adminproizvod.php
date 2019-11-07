@@ -10,7 +10,7 @@ $result = $mysqli->query($query);
 
 ?>
 
-<div class=container-fluid id="prodavnica">
+<div class=container id="prodavnica">
 
 <div class="row d-flex justify-content-center">
 
@@ -38,7 +38,7 @@ while($row = mysqli_fetch_assoc($result)) {
       echo "<td><button type='button' class='btn btn-primary'>Измени...</button></td>";
       echo "<td>".$row['Kategorija']."</td>";
       echo "<td>".$row['Naziv']."</td>";
-      echo "<td>".$row['Opis']."</td>";
+      echo "<td class='opistabela'>".$row['Opis']."</td>";
       echo "<td>".$row['Kolicina']."</td>";
       echo "<td>".$row['Cena']."</td>";
       echo "<td><img src=../".$row['Slika'].">".$row['Slika']."</td>";

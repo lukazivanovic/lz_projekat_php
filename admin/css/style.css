@@ -96,6 +96,13 @@ iframe {
     width: auto;
 }
 
+.opistabela{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+}
+
 /****************FOOTER****************/
 #footer{
     position: absolute;
