@@ -30,15 +30,18 @@ $rowKat = $resultKat->fetch_array();
 </div>
 
 <div class="proizvodSlika">
-<?php
-echo "<img class='img-thumbnail' src='".$row['Slika']."' alt='...'>";
-echo "<br>";
-echo "<p>Назив: ".$row['Naziv']."</p>";
-echo "<p class='text-justify'>Опис: ".$row['Opis']."</p>";
-echo "<p>Количина: ".$row['Kolicina']."</p>";
-echo "<p>Цена: ".$row['Cena']." динара</p>";
 
-$result->close();
+<img class='img-thumbnail' src="<?php echo $row['Slika']; ?>" alt="...">
+<br>
+<p>Назив: <?php echo $row['Naziv']; ?></p>
+<p class="text-justify">Опис: <?php echo $row['Opis']; ?></p>
+<p>Количина: <?php echo $row['Kolicina']; ?></p>
+<p>Цена: <?php echo $row['Cena']; ?> динара</p>
+
+
+<a class="btn btn-primary" id="fetchUserDataBtn" href="ses_korpa.php?id=<?php echo $row['ID'] ?>" role="button">DODAJ U KORPU</a>
+<?php
+$result->close(); 
 $mysqli->close();
 ?>
 </div>

@@ -22,7 +22,7 @@
   <body>
     
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="index.php">
+    <a class="navbar-brand" href="../">
     <img src="img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
     Музичка продавница
     </a>
@@ -32,19 +32,7 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="onama.php"><i class="fas fa-book"></i> О нама</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="galerija.php"><i class="fas fa-images"></i> Галерија</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="prodavnica.php"><i class="fas fa-store"></i> Продавница</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="kontakt.php"><i class="far fa-id-card"></i> Контакт</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="korpa.php"><i class="fas fa-shopping-cart"></i> Корпа</a>
+                <a class="nav-link" href="index.php"><i class="fas fa-book"></i>ADMIN</a>
             </li>
             </ul>
         </div>

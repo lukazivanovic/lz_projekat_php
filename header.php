@@ -46,6 +46,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="korpa.php"><i class="fas fa-shopping-cart"></i> Корпа</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="login.php">LOGIN</a>
+            </li>
             </ul>
         </div>
     </nav>

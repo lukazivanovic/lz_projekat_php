@@ -1,0 +1,4 @@
+1. dugme, onclick u js ima fetch koji poziva ses_korpa.php?id=1
+2.ses_korpa.php - ako dobije $_GET[id], ubacujes u niz $_SESSION['korpa']
+
+3. ovaj niz seprikazuje u korpa.php
