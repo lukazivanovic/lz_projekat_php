@@ -6,7 +6,10 @@ include "header.php";
 <div class="container">
 <h1>Добро дошли! АДМИН</h1>
 
-<a href="adminkategorija.php">Категорије</a>
+<a href="adminkategorija.php">Све категорије</a><br><br>
+<a href="adminproizvod.php">Сви производи</a>
+
+
 </div>
 </div>
 <?php
