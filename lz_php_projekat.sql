@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 07, 2019 at 07:29 PM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 7.2.7
+-- Generation Time: Nov 08, 2019 at 02:34 PM
+-- Server version: 10.1.30-MariaDB
+-- PHP Version: 7.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -34,13 +34,6 @@ CREATE TABLE `administrator` (
   `Korisnicko_ime` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Lozinka` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `administrator`
---
-
-INSERT INTO `administrator` (`ID`, `Email`, `Korisnicko_ime`, `Lozinka`) VALUES
-(1, 'admin@mail.com', 'ADMIN', 'admin');
 
 -- --------------------------------------------------------
 
@@ -83,13 +76,6 @@ CREATE TABLE `kupac` (
   `Post_broj` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Adresa` varchar(300) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `kupac`
---
-
-INSERT INTO `kupac` (`ID`, `Korisnicko_ime`, `Lozinka`, `Ime`, `Prezime`, `Telefon`, `Email`, `Grad`, `Post_broj`, `Adresa`) VALUES
-(1, 'azerty', 'password', 'Ivan', 'Ivanovic', '061/1234567', 'ivan@mail.com', 'Beograd', '11300', 'Novi bulevar 14/25');
 
 -- --------------------------------------------------------
 
@@ -158,7 +144,7 @@ ALTER TABLE `proizvod`
 -- AUTO_INCREMENT for table `administrator`
 --
 ALTER TABLE `administrator`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `kategorija`
@@ -170,7 +156,7 @@ ALTER TABLE `kategorija`
 -- AUTO_INCREMENT for table `kupac`
 --
 ALTER TABLE `kupac`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `proizvod`
