@@ -2,58 +2,22 @@
 include "header.php";
 ?>
 
-<?php 
-$mysqli = new mysqli("localhost", "root", "", "lz_php_projekat");
-mysqli_set_charset( $mysqli, 'utf8');
-$query = "SELECT * FROM proizvod";
-$result = $mysqli->query($query);
+<div class="main">
+<div class="container">
 
-?>
+<a class="btn btn-primary" href="adminkategorija.php" role="button">Назад</a>
 
-<div class=container id="prodavnica">
-
-<div class="row d-flex justify-content-center">
-
-<a class="btn btn-primary" href="./" role="button">Назад</a>
-<a class="btn btn-primary" href="katdodaj.php" role="button">Dodaj...</a>
-
-<table class="table table-striped table-bordered table-hover table-sm" id="tabela">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col"></th>
-      <th scope="col">Категорија</th>
-      <th scope="col">Назив</th>
-      <th scope="col">Опис</th>
-      <th scope="col">Количина</th>
-      <th scope="col">Цена</th>
-      <th scope="col">Слика</th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
-  <tbody>
-  <?php
-while($row = mysqli_fetch_assoc($result)) {
-    echo "<tr>";
-      echo "<th scope='row'>".$row['ID']."</th>";
-      echo "<td><button type='button' class='btn btn-primary'>Измени...</button></td>";
-      echo "<td>".$row['Kategorija']."</td>";
-      echo "<td>".$row['Naziv']."</td>";
-      echo "<td class='opistabela'>".$row['Opis']."</td>";
-      echo "<td>".$row['Kolicina']."</td>";
-      echo "<td>".$row['Cena']."</td>";
-      echo "<td><img src=../".$row['Slika'].">".$row['Slika']."</td>";
-      echo "<td><button type='button' class='btn btn-primary'>Избриши</button></td>";
-    echo "</tr>";
-  }
-  ?>
-  </tbody>
-</table>
-
-<?php
-$result->close();
-$mysqli->close();
-?>
+<form id="formaadmin">
+  <div class="form-group">
+    <label for="katnaziv">Назив</label>
+    <input type="text" class="form-control form-control-sm" id="katnaziv" placeholder="назив нове категорије">
+  </div>
+  <div class="form-group">
+    <label for="katslika">Слика (није неопходно)</label>
+    <input type="file" class="form-control-file form-control-sm" id="katslika">
+  </div>
+  <button type="submit" class="btn btn-primary">додај категорију</button>
+</form>
 
 </div>
 </div>

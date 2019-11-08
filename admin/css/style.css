@@ -103,6 +103,11 @@ iframe {
     -webkit-box-orient: vertical;  
 }
 
+/****************TABELA****************/
+#formaadmin{
+max-width: 400px;
+}
+
 /****************FOOTER****************/
 #footer{
     position: absolute;
