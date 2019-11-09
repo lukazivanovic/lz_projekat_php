@@ -1,21 +1,26 @@
-<?php
+<?php 
+$id = $_GET['id'] ?? '';
+$mysqli = new mysqli("localhost", "root", "", "lz_php_projekat");
+mysqli_set_charset( $mysqli, 'utf8');
+$query = "SELECT * FROM proizvod WHERE ID=$id";
+$result = $mysqli->query($query);
+
+$row = $result->fetch_array();
+
 session_start();
-if(isset($_GET['id']) & !empty($_GET['id'])){
-    $items = $_GET['id'];
-    $_SESSION['cart'] = $items;
-    header('location: index.php?status=success');
-}else{
-    header('location: index.php?status=failed');
+if(empty($_SESSION['korpa'])){
+    $_SESSION['korpa'] = array();
 }
 
-$items = $_SESSION['cart'];
-$cartitems = explode(",", $items);
-if(in_array($_GET['id'], $cartitems)){
-	header('location: index.php?status=incart');
-}else{
-	$items .= "," . $_GET['id'];
-	$_SESSION['cart'] = $items;
-	header('location: index.php?status=success');
-	
-}
+$korpa_predmet = array();
+array_push($korpa_predmet, $row['Naziv'], $row['Opis'], $row['Cena'], $row['Slika']);
+
+
+array_push($_SESSION['korpa'], $korpa_predmet);
+
+header('Location: korpa.php');
+
+
+$result->close();
+$mysqli->close();
 ?>

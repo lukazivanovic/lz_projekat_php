@@ -90,6 +90,19 @@ iframe {
     text-align: center;
 }
 
+/****************TABELA****************/
+#tabela img{
+    height: 60px;
+    width: auto;
+}
+
+.opistabela{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;  
+}
+
 /****************FOOTER****************/
 #footer{
     position: absolute;

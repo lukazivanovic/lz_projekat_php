@@ -36,7 +36,7 @@ $rowKat = $resultKat->fetch_array();
 <p>Назив: <?php echo $row['Naziv']; ?></p>
 <p class="text-justify">Опис: <?php echo $row['Opis']; ?></p>
 <p>Количина: <?php echo $row['Kolicina']; ?></p>
-<p>Цена: <?php echo $row['Cena']; ?> динара</p>
+<p>Цена: <?php echo number_format($row['Cena'],2); ?> динара</p>
 
 
 <a class="btn btn-primary" id="fetchUserDataBtn" href="ses_korpa.php?id=<?php echo $row['ID'] ?>" role="button">DODAJ U KORPU</a>

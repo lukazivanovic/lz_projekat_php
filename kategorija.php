@@ -30,7 +30,9 @@ $rowKat = $resultKat->fetch_assoc();
 <div class="row d-flex justify-content-center">
 
 <?php
-while($row = mysqli_fetch_assoc($result)) {?>
+while($row = mysqli_fetch_assoc($result)) {
+  if($row['Kolicina']>0){
+  ?>
 <a class="text-decoration-none" href="proizvod.php?id=<?php echo $row['ID']; ?>">
 <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center">
 <div class="card">
@@ -42,6 +44,7 @@ while($row = mysqli_fetch_assoc($result)) {?>
 </div>
 </a>
 <?php
+  }
 }
 
 $result->close();

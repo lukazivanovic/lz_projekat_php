@@ -91,6 +91,10 @@ iframe {
 }
 
 /****************TABELA****************/
+#tabela{
+margin-bottom: 100px;
+}
+
 #tabela img{
     height: 60px;
     width: auto;
@@ -99,11 +103,11 @@ iframe {
 .opistabela{
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;  
 }
 
-/****************TABELA****************/
+/****************ADMIN FORMA****************/
 #formaadmin{
 max-width: 400px;
 }
