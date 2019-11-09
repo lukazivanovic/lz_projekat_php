@@ -25,21 +25,25 @@ $rowKat = $resultKat->fetch_array();
 
 <div class="container galerija">
 
-<div class="d-flex justify-content-center">
-<button type="button" class="btn btn-primary btn-lg">Претрага производа</button>
-</div>
-
 <div class="proizvodSlika">
-
+<div class="row">
+  <div class="col-sm-12 col-md-6">
 <img class='img-thumbnail' src="<?php echo $row['Slika']; ?>" alt="...">
+</div>
+  <div class="col-sm-12 col-md-6">
+<?php if($row['Kolicina']>0){ ?>
+  <p>Количина: <?php echo $row['Kolicina']; ?></p>
+  <p>Цена: <?php echo number_format($row['Cena'],2); ?> динара</p>
+  <a class="btn btn-primary" id="fetchUserDataBtn" href="ses_korpa.php?id=<?php echo $row['ID'] ?>" role="button">ДОДАЈ У КОРПУ</a>
+  <?php } else { ?>
+    <p class="nijedostupno">НИЈЕ ДОСТУПНО</p>
+ <?php } ?>
+</div>
+</div>
 <br>
-<p>Назив: <?php echo $row['Naziv']; ?></p>
-<p class="text-justify">Опис: <?php echo $row['Opis']; ?></p>
-<p>Количина: <?php echo $row['Kolicina']; ?></p>
-<p>Цена: <?php echo number_format($row['Cena'],2); ?> динара</p>
+<p class="text-justify"><?php echo $row['Opis']; ?></p>
 
 
-<a class="btn btn-primary" id="fetchUserDataBtn" href="ses_korpa.php?id=<?php echo $row['ID'] ?>" role="button">DODAJ U KORPU</a>
 <?php
 $result->close(); 
 $mysqli->close();

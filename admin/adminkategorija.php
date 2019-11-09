@@ -14,7 +14,7 @@ $result = $mysqli->query($query);
 ?>
 
 <a class="btn btn-primary" href="./" role="button">Назад</a>
-<a class="btn btn-primary" href="katdodaj.php" role="button">Dodaj...</a>
+<a class="btn btn-primary" href="katdodaj.php" role="button">Додај...</a>
 
 <table class="table table-striped table-bordered table-hover table-sm" id="tabela">
   <thead class="thead-dark">

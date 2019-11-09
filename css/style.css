@@ -90,6 +90,10 @@ iframe {
     text-align: center;
 }
 
+.nijedostupno{
+    color: red;
+}
+
 /****************TABELA****************/
 #tabela img{
     height: 60px;
@@ -101,6 +105,11 @@ iframe {
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;  
+}
+
+/****************LOGIN****************/
+#formaadmin{
+    max-width: 400px;
 }
 
 /****************FOOTER****************/
