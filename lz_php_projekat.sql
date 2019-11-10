@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 09, 2019 at 10:09 PM
+-- Generation Time: Nov 10, 2019 at 10:53 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -34,6 +34,39 @@ CREATE TABLE `administrator` (
   `Korisnicko_ime` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Lozinka` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `administrator`
+--
+
+INSERT INTO `administrator` (`ID`, `Email`, `Korisnicko_ime`, `Lozinka`) VALUES
+(1, 'a@a.com', 'ADMIN', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `galerija`
+--
+
+CREATE TABLE `galerija` (
+  `ID` int(11) NOT NULL,
+  `Naslov` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Opis` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Slika` varchar(300) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Alt` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `galerija`
+--
+
+INSERT INTO `galerija` (`ID`, `Naslov`, `Opis`, `Slika`, `Alt`) VALUES
+(1, 'First slide label', 'Nulla vitae elit libero, a pharetra augue mollis interdum.', 'img/carousel/carousel01.jpg', 'alt1'),
+(2, 'Second slide label', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'img/carousel/carousel02.jpg', 'alt2'),
+(3, 'Third slide label', 'Praesent commodo cursus magna, vel scelerisque nisl consectetur.', 'img/carousel/carousel03.jpg', 'alt3'),
+(4, 'Fourth slide label', 'fpqefjef qefkqenfpef eqqefnqepf enqfenfpngsv bbtgwb.', 'img/carousel/carousel04.jpg', 'alt4'),
+(5, 'Peta slika', 'opis...', 'img/carousel/upload_29919_1.jpg', 'alt5'),
+(6, 'metal majice', 'metal', 'img/carousel/rock-metal-majice-slika-87954764.jpg', 'alt6');
 
 -- --------------------------------------------------------
 
@@ -77,6 +110,13 @@ CREATE TABLE `kupac` (
   `Adresa` varchar(300) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `kupac`
+--
+
+INSERT INTO `kupac` (`ID`, `Korisnicko_ime`, `Lozinka`, `Ime`, `Prezime`, `Telefon`, `Email`, `Grad`, `Post_broj`, `Adresa`) VALUES
+(1, 'azerty123', 'pass', 'Bob', 'Smith', '060/1234567', 'b@b.com', 'Toronto', '55555', 'Novi bulevar 310/34');
+
 -- --------------------------------------------------------
 
 --
@@ -118,6 +158,12 @@ ALTER TABLE `administrator`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indexes for table `galerija`
+--
+ALTER TABLE `galerija`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexes for table `kategorija`
 --
 ALTER TABLE `kategorija`
@@ -144,7 +190,13 @@ ALTER TABLE `proizvod`
 -- AUTO_INCREMENT for table `administrator`
 --
 ALTER TABLE `administrator`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `galerija`
+--
+ALTER TABLE `galerija`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `kategorija`
@@ -156,7 +208,7 @@ ALTER TABLE `kategorija`
 -- AUTO_INCREMENT for table `kupac`
 --
 ALTER TABLE `kupac`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `proizvod`

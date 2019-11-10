@@ -24,7 +24,10 @@ $rowKat = $resultKat->fetch_assoc();
 <div class="container-fluid" id="prodavnica">
 
 <div class="d-flex justify-content-center">
-<button type="button" class="btn btn-primary btn-lg">Претрага производа</button>
+<form class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="search" placeholder="Претражи" aria-label="Search">
+    <button class="btn btn-primary my-2 my-sm-0" type="submit">Претражи</button>
+</form>
 </div>
 
 <div class="row d-flex justify-content-center">

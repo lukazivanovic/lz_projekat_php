@@ -13,8 +13,8 @@ session_start();
     <tr>
       <th scope="col">Назив</th>
       <th scope="col">Опис</th>
-      <th scope="col">Цена</th>
       <th scope="col">Слика</th>
+      <th scope="col">Цена</th>
       <th scope="col"></th>
     </tr>
   </thead>
@@ -25,9 +25,9 @@ foreach($_SESSION['korpa'] as $key=>$predmetUKorpi) {
     echo "<tr>";
       echo "<td>".$predmetUKorpi[0]."</td>";
       echo "<td class='opistabela'>".$predmetUKorpi[1]."</td>";
-      echo "<td>".number_format($predmetUKorpi[2],2)."</td>";
-      $ukupnaCena += $predmetUKorpi[2];
       echo "<td><img src=".$predmetUKorpi[3]."></td>";
+      echo "<td class='font-weight-bold'>".number_format($predmetUKorpi[2],2)."</td>";
+      $ukupnaCena += $predmetUKorpi[2];
       echo "<td><a class='btn btn-primary' href='ses_korpa_brisanje.php?id=".$key."' role='button'>уклони из корпе</a></td>";
 	echo "</tr>";
 	
@@ -38,11 +38,22 @@ foreach($_SESSION['korpa'] as $key=>$predmetUKorpi) {
 
 <?php
 if($ukupnaCena > 0){ ?>
-<p>Укупна цена: <?php echo number_format($ukupnaCena,2); ?> динара</p>
-<button type="button" class="btn btn-primary">КУПИ</button>
-<?php } else {
-  echo "Корпа је празна";
-} ?>
+  <p class='font-weight-bold'>Укупна цена: <?php echo number_format($ukupnaCena,2); ?> динара</p>
+  <p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    КУПИ
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="alert alert-warning" role="alert">
+    Да ли сте сигурни да купујете ове производе? 
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">НЕ</button>
+    <button type="button" class="btn btn-primary btn-lg">ДА</button>
+  </div>
+</div>
+<?php } else { ?>
+  <div class="alert alert-danger" role="alert">корпа је празна</div>
+<?php } ?>
 
 </div>
 <?php

@@ -31,8 +31,7 @@ $rowKat = $resultKat->fetch_array();
 <img class='img-thumbnail' src="<?php echo $row['Slika']; ?>" alt="...">
 </div>
   <div class="col-sm-12 col-md-6">
-<?php if($row['Kolicina']>0){ ?>
-  <p>Количина: <?php echo $row['Kolicina']; ?></p>
+<?php if($row['Kolicina']>0){ ?>  
   <p>Цена: <?php echo number_format($row['Cena'],2); ?> динара</p>
   <a class="btn btn-primary" id="fetchUserDataBtn" href="ses_korpa.php?id=<?php echo $row['ID'] ?>" role="button">ДОДАЈ У КОРПУ</a>
   <?php } else { ?>

@@ -32,7 +32,7 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="index.php"><i class="fas fa-book"></i>ADMIN</a>
+                <a class="nav-link" href="index.php"><i class="fas fa-book"></i> ADMIN</a>
             </li>
             </ul>
         </div>

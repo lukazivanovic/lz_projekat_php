@@ -69,7 +69,7 @@ iframe {
     padding: 0px 50px 100px 50px;
 }
 
-.carousel-inner>.item>img {
+.carousel-inner>.carousel-item>img {
     width: auto;
     max-height: 600px;
     overflow: hidden;
