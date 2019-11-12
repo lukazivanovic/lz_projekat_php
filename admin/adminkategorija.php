@@ -33,7 +33,7 @@ while($row = mysqli_fetch_array($result)) {
       echo "<th scope='row'>".$row['ID']."</th>";
       echo "<td><a href='katizmeni.php?id=".$row['ID']."'><button type='button' class='btn btn-primary'>Измени...</button></a></td>";
       echo "<td>".$row['Naziv']."</td>";
-      echo "<td><img src=../".$row['Slika'].">".$row['Slika']."</td>";
+      echo "<td><img src=".$row['Slika'].">".$row['Slika']."</td>";
       echo "<td><button type='button' class='btn btn-primary'>Избриши</button></td>";
     echo "</tr>";
   }

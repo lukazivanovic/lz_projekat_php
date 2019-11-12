@@ -28,7 +28,7 @@ $rowKat = $resultKat->fetch_array();
 <div class="proizvodSlika">
 <div class="row">
   <div class="col-sm-12 col-md-6">
-<img class='img-thumbnail' src="<?php echo $row['Slika']; ?>" alt="...">
+<img class='img-thumbnail' src='admin/<?php echo $row['Slika']; ?>' alt="...">
 </div>
   <div class="col-sm-12 col-md-6">
 <?php if($row['Kolicina']>0){ ?>  

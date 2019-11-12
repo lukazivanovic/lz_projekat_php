@@ -42,7 +42,7 @@ while($row = mysqli_fetch_assoc($result)) {
       echo "<td class='opistabela'>".$row['Opis']."</td>";
       echo "<td>".$row['Kolicina']."</td>";
       echo "<td>".$row['Cena']."</td>";
-      echo "<td><img src=../".$row['Slika'].">".$row['Slika']."</td>";
+      echo "<td><img src=".$row['Slika'].">".$row['Slika']."</td>";
       echo "<td><button type='button' class='btn btn-primary'>Избриши</button></td>";
     echo "</tr>";
   }

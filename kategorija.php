@@ -37,7 +37,7 @@ while($row = mysqli_fetch_assoc($result)) { ?>
 <a class="text-decoration-none" href="proizvod.php?id=<?php echo $row['ID']; ?>">
 <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center">
 <div class="card">
-<img src="<?php echo $row['Slika']; ?>" class="card-img-top" alt="...">
+<img src="admin/<?php echo $row['Slika']; ?>" class="card-img-top" alt="...">
 <div class="card-body">
 <p class="card-text"><?php echo $row['Naziv']; ?></p>
 <?php if($row['Kolicina']<=0){ ?>

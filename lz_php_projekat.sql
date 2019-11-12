@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 10, 2019 at 10:53 PM
+-- Generation Time: Nov 12, 2019 at 11:42 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -85,7 +85,7 @@ CREATE TABLE `kategorija` (
 --
 
 INSERT INTO `kategorija` (`ID`, `Naziv`, `Slika`) VALUES
-(1, 'Музички инструменти', 'img/kategorije/katinstrumenti.jpg'),
+(1, 'Музички инструменти', 'katinstrumenti.jpg'),
 (2, 'Техничка опрема', 'img/kategorije/katoprema.jpg'),
 (3, 'Остало', 'img/kategorije/katostalo.jpg'),
 (4, 'Албуми', 'img/kategorije/katalbumi.jpeg'),
