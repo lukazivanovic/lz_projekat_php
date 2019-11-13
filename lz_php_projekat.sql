@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2019 at 11:42 AM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.1
+-- Generation Time: Nov 13, 2019 at 06:42 PM
+-- Server version: 10.1.36-MariaDB
+-- PHP Version: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -86,10 +86,11 @@ CREATE TABLE `kategorija` (
 
 INSERT INTO `kategorija` (`ID`, `Naziv`, `Slika`) VALUES
 (1, 'Музички инструменти', 'katinstrumenti.jpg'),
-(2, 'Техничка опрема', 'img/kategorije/katoprema.jpg'),
-(3, 'Остало', 'img/kategorije/katostalo.jpg'),
-(4, 'Албуми', 'img/kategorije/katalbumi.jpeg'),
-(5, 'Слушалице', 'img/kategorije/katslusalice.jpg');
+(2, 'Техничка опрема', 'katoprema.jpg'),
+(3, 'Остало', 'katostalo.jpg'),
+(4, 'Албуми', 'katalbumi.jpeg'),
+(5, 'Слушалице', 'katslusalice.jpg'),
+(9, 'Majice', '1573663727_3568.jpg');
 
 -- --------------------------------------------------------
 
@@ -115,7 +116,8 @@ CREATE TABLE `kupac` (
 --
 
 INSERT INTO `kupac` (`ID`, `Korisnicko_ime`, `Lozinka`, `Ime`, `Prezime`, `Telefon`, `Email`, `Grad`, `Post_broj`, `Adresa`) VALUES
-(1, 'azerty123', 'pass', 'Bob', 'Smith', '060/1234567', 'b@b.com', 'Toronto', '55555', 'Novi bulevar 310/34');
+(1, 'azerty123', 'pass', 'Bob', 'Smith', '060/1234567', 'b@b.com', 'Toronto', '55555', 'Novi bulevar 310/34'),
+(2, 'ana', 'ana', 'Ana', 'Jovic', '061/6655447', 'ana@a.com', 'Chicago', '12321', '2. Rimska 3a');
 
 -- --------------------------------------------------------
 
@@ -202,13 +204,13 @@ ALTER TABLE `galerija`
 -- AUTO_INCREMENT for table `kategorija`
 --
 ALTER TABLE `kategorija`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `kupac`
 --
 ALTER TABLE `kupac`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `proizvod`
