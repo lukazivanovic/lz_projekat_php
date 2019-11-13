@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -43,12 +46,22 @@
                 <li class="nav-item">
                     <a class="nav-link" href="kontakt.php"><i class="far fa-id-card"></i> Контакт</a>
                 </li>
+                
+                <?php if(isset($_SESSION["login_user"])){ ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="korpa.php"><i class="fas fa-shopping-cart"></i> Корпа</a>
+                <a class="nav-link" href="korpa.php"><i class="fas fa-shopping-cart"></i> Корпа</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login.php"><i class="fas fa-sign-in-alt"></i> LOGIN</a>
+                <a class="nav-link" href="profil.php"><i class="fas fa-user-circle"></i> PROFIL</a>
                 </li>
+                <li class="nav-item">
+                <a class="nav-link" href="logout.php"><i class="fas fa-sign-out-alt"></i> SIGN OUT</a>
+                </li>
+                <?php } else { ?>
+                <li class="nav-item">
+                <a class="nav-link" href="loginforma.php"><i class="fas fa-sign-in-alt"></i> LOG IN / SIGN IN</a>
+                </li> 
+                <?php } ?>
             </ul>
         </div>
     </nav>

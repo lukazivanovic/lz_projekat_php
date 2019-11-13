@@ -1,7 +1,9 @@
 <?php
 include "header.php";
-?>
 
+if (!isset( $_SESSION['login_admin'] ) ) { 
+    header("location: loginformaadmin.php");
+}?>
 <div class="main">
 <div class="container">
 
@@ -26,11 +28,11 @@ include "header.php";
     <textarea class="form-control form-control-sm" id="proopis" rows="3"></textarea>
   </div>
   <div class="form-group">
-    <label for="prokolicina">Назив</label>
+    <label for="prokolicina">Kolicina</label>
     <input type="text" class="form-control form-control-sm" id="prokolicina" placeholder="количина">
   </div>
   <div class="form-group">
-    <label for="procena">Назив</label>
+    <label for="procena">Cena</label>
     <input type="text" class="form-control form-control-sm" id="procena" placeholder="цена">
   </div>
   <div class="form-group">

@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -34,6 +37,14 @@
             <li class="nav-item">
                 <a class="nav-link" href="index.php"><i class="fas fa-book"></i> ADMIN</a>
             </li>
+            <?php if(isset($_SESSION["login_admin"])){ ?>
+            <li class="nav-item">
+            <a class="nav-link" href="profil.php"><i class="fas fa-user-circle"></i> PROFIL</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="logoutadmin.php"><i class="fas fa-sign-out-alt"></i> SIGN OUT</a>
+            </li>
+            <?php } ?>
             </ul>
         </div>
     </nav>

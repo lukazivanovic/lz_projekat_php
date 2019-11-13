@@ -2,10 +2,6 @@
 include "header.php";
 ?>
 
-<?php
-session_start();
-?>
-
 <div class="container" style="padding-bottom: 200px;">
 
 <table class="table table-striped table-bordered table-hover table-sm" id="tabela">
@@ -21,7 +17,8 @@ session_start();
   <tbody>
   <?php
   $ukupnaCena = 0;
-foreach($_SESSION['korpa'] as $key=>$predmetUKorpi) {
+if(isset($_SESSION['korpa'])){
+  foreach($_SESSION['korpa'] as $key=>$predmetUKorpi) {
     echo "<tr>";
       echo "<td>".$predmetUKorpi[0]."</td>";
       echo "<td class='opistabela'>".$predmetUKorpi[1]."</td>";
@@ -30,8 +27,8 @@ foreach($_SESSION['korpa'] as $key=>$predmetUKorpi) {
       $ukupnaCena += $predmetUKorpi[2];
       echo "<td><a class='btn btn-primary' href='ses_korpa_brisanje.php?id=".$key."' role='button'>уклони из корпе</a></td>";
 	echo "</tr>";
-	
   }
+}
   ?>
   </tbody>
 </table>

@@ -33,8 +33,10 @@ $rowKat = $resultKat->fetch_array();
   <div class="col-sm-12 col-md-6">
 <?php if($row['Kolicina']>0){ ?>  
   <p>Цена: <?php echo number_format($row['Cena'],2); ?> динара</p>
+  <?php if (isset( $_SESSION['login_user'] ) ) { ?>
   <a class="btn btn-primary" id="fetchUserDataBtn" href="ses_korpa.php?id=<?php echo $row['ID'] ?>" role="button">ДОДАЈ У КОРПУ</a>
-  <?php } else { ?>
+  <?php } else { ?><a href="loginforma.php">ULOGUJTE SE</a> DA BISTE KUPILI PROIZVOD <?php }
+  } else { ?>
     <p class="nijedostupno">НИЈЕ ДОСТУПНО</p>
  <?php } ?>
 </div>

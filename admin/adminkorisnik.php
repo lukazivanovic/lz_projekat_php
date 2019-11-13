@@ -1,7 +1,9 @@
 <?php
 include "header.php";
-?>
 
+if (!isset( $_SESSION['login_admin'] ) ) { 
+    header("location: loginformaadmin.php");
+}?>
 <div class=container id="prodavnica">
 
 <div class="row d-flex justify-content-center">

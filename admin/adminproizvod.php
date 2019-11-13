@@ -1,7 +1,9 @@
 <?php
 include "header.php";
-?>
 
+if (!isset( $_SESSION['login_admin'] ) ) { 
+    header("location: loginformaadmin.php");
+}?>
 <?php 
 $mysqli = new mysqli("localhost", "root", "", "lz_php_projekat");
 mysqli_set_charset( $mysqli, 'utf8');
