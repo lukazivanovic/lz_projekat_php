@@ -9,7 +9,7 @@ if (!isset( $_SESSION['login_admin'] ) ) {
 $conn = mysqli_connect("localhost", "root", "", "lz_php_projekat");
 mysqli_set_charset( $conn, 'utf8');
 
-$upload_dir = 'img/kategorije/';
+$upload_dir = 'img/proizvodi/';
 
 if (isset($_POST['Submit'])) {
 $kategorija = $_POST['kategorija'];
@@ -40,6 +40,7 @@ if(empty($name)){
 		$sql = "insert into proizvod(Kategorija, Naziv, Opis, Kolicina, Cena, Slika)
 				values('".$kategorija."', '".$name."', '".$opis."', '".$kolicina."', '".$cena."', '".$pic."')";
 		$result = mysqli_query($conn, $sql);
+
 		if($result){
 			$successMsg = 'New record added successfully';
 			header('Location: adminproizvod.php');
@@ -47,25 +48,34 @@ if(empty($name)){
 			$errorMsg = 'Error '.mysqli_error($conn);
 		}
 	}
+
+		//$sqlKol = "SELECT kategorija.ID, kategorija.Naziv, proizvod.Kategorija FROM proizvod JOIN kategorija ON kategorija.ID=proizvod.Kategorija GROUP BY kategorija.ID";
+		//$resultKol = mysqli_query($conn, $sqlKol);
+		
 }
 ?>
 
 <div class="main">
 <div class="container">
 
-<a class="btn btn-primary" href="adminproizvod.php" role="button">Назад</a>
-
 <div class="row justify-content-center">
 	<div class="col-md-6">
+		<a class="btn btn-primary" href="adminproizvod.php" role="button">Назад</a>
 		<form class="" action="" method="post" enctype="multipart/form-data">
       <div class="form-group">
         <label for="kategorija">Категорија</label>
-        <select class="custom-select" id="kategorija" name="kategorija">
-          <option selected value=""></option>
-          <option value="1">1 један</option>
-          <option value="2">2 два</option>
-          <option value="3">3 три</option>
-        </select>
+				<?php
+				$sqlKat=mysqli_query($conn, "SELECT * FROM kategorija");
+				if(mysqli_num_rows($sqlKat)){
+				$selectKat= '<select class="custom-select" id="kategorija" name="kategorija">';
+				$selectKat.='<option selected></option>';
+				while($rs=mysqli_fetch_array($sqlKat)){
+							$selectKat.='<option value="'.$rs['ID'].'">'.$rs['Naziv'].'</option>';
+					}
+				}
+				$selectKat.='</select>';
+				echo $selectKat;
+				?>
       </div>
       <div class="form-group">
 			  <label for="name">назив</label>
@@ -73,7 +83,7 @@ if(empty($name)){
       </div>
       <div class="form-group">
 			  <label for="name">опис</label>
-			  <input type="text" class="form-control" name="opis" placeholder="опис" value="">
+			  <textarea type="text" class="form-control" name="opis" placeholder="опис" rows="5"></textarea>
 			</div>
       <div class="form-group">
 			  <label for="name">количина</label>

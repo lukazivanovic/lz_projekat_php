@@ -7,8 +7,6 @@ if (!isset( $_SESSION['login_admin'] ) ) {
 <div class="main">
 <div class="container">
 
-<a class="btn btn-primary" href="adminkategorija.php" role="button">Назад</a>
-
 <?php
 $mysqli = mysqli_connect("localhost", "root", "", "lz_php_projekat");
 mysqli_set_charset( $mysqli, 'utf8');
@@ -72,24 +70,25 @@ if(isset($_POST['Submit'])){
 }
 ?>
 <div class="row justify-content-center">
-<div class="col-md-6">
-  <form class="" action="" method="post" enctype="multipart/form-data">
-    <div class="form-group">
-      <label for="name">назив</label>
-      <input type="text" class="form-control" name="name" placeholder="назив" value="<?php echo $row['Naziv']; ?>">
-    </div>
-    <div class="form-group">
-      <label for="image">изабери слику</label>
-      <div>
-        <img src="<?php echo $upload_dir.$row['Slika'] ?>" width="100">
-        <input type="file" class="form-control" name="image" value="">
+  <div class="col-md-6">
+    <a class="btn btn-primary" href="adminkategorija.php" role="button">Назад</a>
+    <form class="" action="" method="post" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="name">назив</label>
+        <input type="text" class="form-control" name="name" placeholder="назив" value="<?php echo $row['Naziv']; ?>">
       </div>
-    </div>
-    <div class="form-group">
-      <button type="submit" name="Submit" class="btn btn-primary waves">измени категорију</button>
-    </div>
-  </form>
-</div>
+      <div class="form-group">
+        <label for="image">изабери слику</label>
+        <div>
+          <img src="<?php echo $upload_dir.$row['Slika'] ?>" width="100">
+          <input type="file" class="form-control" name="image" value="">
+        </div>
+      </div>
+      <div class="form-group">
+        <button type="submit" name="Submit" class="btn btn-primary waves">измени категорију</button>
+      </div>
+    </form>
+  </div>
 </div>
 <!--
 <form>

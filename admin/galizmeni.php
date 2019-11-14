@@ -7,8 +7,6 @@ if (!isset( $_SESSION['login_admin'] ) ) {
 <div class="main">
 <div class="container">
 
-<a class="btn btn-primary" href="admingalerija.php" role="button">Назад</a>
-
 <?php
 $mysqli = mysqli_connect("localhost", "root", "", "lz_php_projekat");
 mysqli_set_charset( $mysqli, 'utf8');
@@ -77,6 +75,7 @@ if(isset($_POST['Submit'])){
 ?>
 <div class="row justify-content-center">
 <div class="col-md-6">
+  <a class="btn btn-primary" href="admingalerija.php" role="button">Назад</a>
   <form class="" action="" method="post" enctype="multipart/form-data">
     <div class="form-group">
       <label for="name">наслов</label>

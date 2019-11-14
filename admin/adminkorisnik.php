@@ -30,7 +30,7 @@ if(isset($_GET['delete'])){
 }
 ?>
 
-<a class="btn btn-primary" href="./" role="button">Назад</a>
+<a class="btn btn-primary mr-md-3" href="./" role="button">Назад</a>
 <a class="btn btn-primary" href="kordodaj.php" role="button">Додај...</a>
 
 <table class="table table-striped table-bordered table-hover table-sm" id="tabela">

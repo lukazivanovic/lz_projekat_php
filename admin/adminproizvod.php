@@ -30,7 +30,7 @@ if(isset($_GET['delete'])){
 
 <div class="row d-flex justify-content-center">
 
-<a class="btn btn-primary" href="./" role="button">Назад</a>
+<a class="btn btn-primary mr-md-3" href="./" role="button">Назад</a>
 <a class="btn btn-primary" href="prododaj.php" role="button">Додај...</a>
 
 <table class="table table-striped table-bordered table-hover table-sm" id="tabela">
@@ -51,8 +51,16 @@ if(isset($_GET['delete'])){
 while($row = mysqli_fetch_assoc($result)) { ?>
     <tr> 
       <?php
-      echo "<th scope='row'>".$row['ID']."</th>";
-      echo "<td>".$row['Kategorija']."</td>";
+      echo "<td scope='row'>".$row['ID']."</td>";
+
+      $sqlKat=mysqli_query($mysqli, "SELECT * FROM kategorija");
+      if(mysqli_num_rows($sqlKat)){
+      while($rs=mysqli_fetch_array($sqlKat)){
+          if($rs['ID']==$row['Kategorija'])
+            echo "<td>".$rs['ID']." (".$rs['Naziv'].")</td>";
+        }
+      }
+      
       echo "<td>".$row['Naziv']."</td>";
       echo "<td class='opistabela'>".$row['Opis']."</td>";
       echo "<td>".$row['Kolicina']."</td>";

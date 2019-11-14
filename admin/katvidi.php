@@ -7,8 +7,6 @@ if (!isset( $_SESSION['login_admin'] ) ) {
 <div class="main">
 <div class="container">
 
-<a class="btn btn-primary" href="adminkategorija.php" role="button">Назад</a>
-
 <?php
 $mysqli = mysqli_connect("localhost", "root", "", "lz_php_projekat");
 mysqli_set_charset( $mysqli, 'utf8');
@@ -28,10 +26,13 @@ if (isset($_GET['id'])) {
 ?>
 
 
-<div class="justify-content-center">
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <a class="btn btn-primary" href="adminkategorija.php" role="button">Назад</a>
     <p><?php echo $row['Naziv'] ?></p>
     <img src="<?php echo $upload_dir.$row['Slika'] ?>" height="200">
     <p><?php echo $row['Slika'] ?></p>
+  </div>
 </div>
 
 </div>

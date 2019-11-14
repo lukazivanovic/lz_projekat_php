@@ -51,10 +51,9 @@ if(empty($name)){
 <div class="main">
 <div class="container">
 
-<a class="btn btn-primary" href="admingalerija.php" role="button">Назад</a>
-
 <div class="row justify-content-center">
 	<div class="col-md-6">
+		<a class="btn btn-primary" href="admingalerija.php" role="button">Назад</a>
 		<form class="" action="" method="post" enctype="multipart/form-data">
 			<div class="form-group">
 			<label for="name">наслов</label>

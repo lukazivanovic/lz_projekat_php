@@ -7,8 +7,6 @@ if (!isset( $_SESSION['login_admin'] ) ) {
 <div class="main">
 <div class="container">
 
-<a class="btn btn-primary" href="adminproizvod.php" role="button">Назад</a>
-
 <?php
 $mysqli = mysqli_connect("localhost", "root", "", "lz_php_projekat");
 mysqli_set_charset( $mysqli, 'utf8');
@@ -81,10 +79,24 @@ if(isset($_POST['Submit'])){
 ?>
 <div class="row justify-content-center">
 <div class="col-md-6">
-  <form class="" action="" method="post" enctype="multipart/form-data">
+    <a class="btn btn-primary" href="adminproizvod.php" role="button">Назад</a>
+    <form class="" action="" method="post" enctype="multipart/form-data">
     <div class="form-group">
-      <label for="name">Категорија</label>
-      <input type="text" class="form-control" name="kategorija" placeholder="kategorija" value="<?php echo $row['Naziv']; ?>">
+        <label for="kategorija">Категорија</label>
+        <?php
+        $sqlKat=mysqli_query($mysqli, "SELECT * FROM kategorija");
+        if(mysqli_num_rows($sqlKat)){
+        $selectKat='<select class="custom-select" id="kategorija" name="kategorija">';
+        while($rs=mysqli_fetch_array($sqlKat)){
+            if($rs['ID']==$row['Kategorija'])
+                $selectKat.='<option selected value="'.$rs['ID'].'">'.$rs['Naziv'].'</option>';
+            else 
+                $selectKat.='<option value="'.$rs['ID'].'">'.$rs['Naziv'].'</option>';
+            }
+        }
+        $selectKat.='</select>';
+        echo $selectKat;
+        ?>
     </div>
     <div class="form-group">
       <label for="name">назив</label>
@@ -92,7 +104,7 @@ if(isset($_POST['Submit'])){
     </div>
     <div class="form-group">
       <label for="name">опис</label>
-      <input type="text" class="form-control" name="opis" placeholder="опис" value="<?php echo $row['Opis']; ?>">
+      <textarea type="text" class="form-control" name="opis" placeholder="опис" rows="5"><?php echo $row['Opis']; ?></textarea>
     </div>
     <div class="form-group">
       <label for="name">количина</label>

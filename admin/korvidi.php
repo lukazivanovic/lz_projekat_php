@@ -7,8 +7,6 @@ if (!isset( $_SESSION['login_admin'] ) ) {
 <div class="main">
 <div class="container">
 
-<a class="btn btn-primary" href="adminkorisnik.php" role="button">Назад</a>
-
 <?php
 $mysqli = mysqli_connect("localhost", "root", "", "lz_php_projekat");
 mysqli_set_charset( $mysqli, 'utf8');
@@ -25,7 +23,9 @@ if (isset($_GET['id'])) {
 }
 ?>
 
-<div class="justify-content-center">
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <a class="btn btn-primary" href="adminkorisnik.php" role="button">Назад</a>
     <p>Корисничко име: <?php echo $row['Korisnicko_ime'] ?></p>
     <p>Име: <?php echo $row['Ime'] ?></p>
     <p>Презиме: <?php echo $row['Prezime'] ?></p>
@@ -34,6 +34,7 @@ if (isset($_GET['id'])) {
     <p>Град: <?php echo $row['Grad'] ?></p>
     <p>Поштански број: <?php echo $row['Post_broj'] ?></p>
     <p>Адреса: <?php echo $row['Adresa'] ?></p>
+  </div>
 </div>
 
 </div>
