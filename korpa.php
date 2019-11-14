@@ -22,7 +22,7 @@ if(isset($_SESSION['korpa'])){
     echo "<tr>";
       echo "<td>".$predmetUKorpi[0]."</td>";
       echo "<td class='opistabela'>".$predmetUKorpi[1]."</td>";
-      echo "<td><img src='admin/".$predmetUKorpi[3]."'></td>";
+      echo "<td><img src='admin/img/proizvodi/".$predmetUKorpi[3]."'></td>";
       echo "<td class='font-weight-bold'>".number_format($predmetUKorpi[2],2)."</td>";
       $ukupnaCena += $predmetUKorpi[2];
       echo "<td><a class='btn btn-primary' href='ses_korpa_brisanje.php?id=".$key."' role='button'>уклони из корпе</a></td>";

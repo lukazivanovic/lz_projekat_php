@@ -4,14 +4,12 @@ session_start();
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     
     <script src="https://kit.fontawesome.com/9333006fb1.js" crossorigin="anonymous"></script>
@@ -20,7 +18,7 @@ session_start();
     
     <link rel="stylesheet" href="css/style.css">
 
-    <title>ADMIN</title>
+    <title>АДМИН</title>
   </head>
   <body>
     
@@ -35,14 +33,14 @@ session_start();
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="index.php"><i class="fas fa-book"></i> ADMIN</a>
+                <a class="nav-link" href="index.php"><i class="fas fa-book"></i> АДМИН</a>
             </li>
             <?php if(isset($_SESSION["login_admin"])){ ?>
             <li class="nav-item">
-            <a class="nav-link" href="profil.php"><i class="fas fa-user-circle"></i> PROFIL</a>
+            <a class="nav-link" href="profil.php"><i class="fas fa-user-circle"></i> ПРОФИЛ</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="logoutadmin.php"><i class="fas fa-sign-out-alt"></i> SIGN OUT</a>
+            <a class="nav-link" href="logoutadmin.php"><i class="fas fa-sign-out-alt"></i> ОДЈАВА</a>
             </li>
             <?php } ?>
             </ul>

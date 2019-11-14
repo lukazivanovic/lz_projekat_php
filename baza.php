@@ -15,7 +15,7 @@ class Baza{
     $result = $this->conn->query($query);
     return $result;
     }
-    ... i tako za sve funkcije koje pozivaju bilo koje podatke iz baze
+    //... i tako za sve funkcije koje pozivaju bilo koje podatke iz baze
 }
 $db = new Baza();   //kljucno. $db je objekat koji je globalni i pozivas iz bilo kog fajla koji ukljucuje baza.php
 ?>

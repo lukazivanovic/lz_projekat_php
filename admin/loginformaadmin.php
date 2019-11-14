@@ -8,15 +8,14 @@ header("location: index.php");
 ?>
 
 <div id="main" class="container">
-    <h1>PHP Login Session Example</h1>
     <div id="login">
-        <h2>Login Form</h2>
+        <h2>ПРИЈАВА админ</h2>
         <form action="" method="post">
-            <label>UserName :</label>
-            <input id="name" name="username" placeholder="username" type="text">
-            <label>Password :</label>
-            <input id="password" name="password" placeholder="**********" type="password">
-            <input name="submit" type="submit" value=" Login ">
+            <label>корисничко име :</label>
+            <input id="name" name="username" placeholder="корисничко име" type="text">
+            <label>лозинка :</label>
+            <input id="password" name="password" placeholder="*****" type="password">
+            <input name="submit" type="submit" value=" ПРИЈАВИ СЕ ">
             <span><?php echo $error; ?></span>
         </form>
     </div>

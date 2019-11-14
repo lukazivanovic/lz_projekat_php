@@ -75,18 +75,18 @@ if(isset($_POST['Submit'])){
 <div class="col-md-6">
   <form class="" action="" method="post" enctype="multipart/form-data">
     <div class="form-group">
-      <label for="name">Naziv</label>
-      <input type="text" class="form-control" name="name" placeholder="Enter Name" value="<?php echo $row['Naziv']; ?>">
+      <label for="name">назив</label>
+      <input type="text" class="form-control" name="name" placeholder="назив" value="<?php echo $row['Naziv']; ?>">
     </div>
     <div class="form-group">
-      <label for="image">Izaberi sliku</label>
+      <label for="image">изабери слику</label>
       <div class="col-md-6">
         <img src="<?php echo $upload_dir.$row['Slika'] ?>" width="100">
         <input type="file" class="form-control" name="image" value="">
       </div>
     </div>
     <div class="form-group">
-      <button type="submit" name="Submit" class="btn btn-primary waves">izmeni kategoriju</button>
+      <button type="submit" name="Submit" class="btn btn-primary waves">измени категорију</button>
     </div>
   </form>
 </div>

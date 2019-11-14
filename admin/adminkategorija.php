@@ -55,10 +55,9 @@ while($row = mysqli_fetch_array($result)) {
       ?>
       <td><a href="katvidi.php?id=<?php echo $row['ID'] ?>" class="btn btn-success"><i class="fa fa-eye"></i></a>
       <a href="katizmeni.php?id=<?php echo $row['ID'] ?>" class="btn btn-info"><i class="fa fa-user-edit"></i></a>
-      <a href="adminkategorija.php?delete=<?php echo $row['ID'] ?>" class="btn btn-danger" onclick="return confirm('Da li hoces da izbrises ovu kategoriju?')"><i class="fa fa-trash-alt"></i></a></td>
-    <?php echo "</tr>";
-  }
-  ?>
+      <a href="adminkategorija.php?delete=<?php echo $row['ID'] ?>" class="btn btn-danger" onclick="return confirm('Да ли хоћеш да избришеш ову категорију?')"><i class="fa fa-trash-alt"></i></a></td>
+    </tr>
+  <?php } ?>
   </tbody>
 </table>
 

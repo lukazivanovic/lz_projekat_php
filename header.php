@@ -52,14 +52,14 @@ session_start();
                 <a class="nav-link" href="korpa.php"><i class="fas fa-shopping-cart"></i> Корпа</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="profil.php"><i class="fas fa-user-circle"></i> PROFIL</a>
+                <a class="nav-link" href="profil.php"><i class="fas fa-user-circle"></i> Профил</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="logout.php"><i class="fas fa-sign-out-alt"></i> SIGN OUT</a>
+                <a class="nav-link" href="logout.php"><i class="fas fa-sign-out-alt"></i> ОДЈАВА</a>
                 </li>
                 <?php } else { ?>
                 <li class="nav-item">
-                <a class="nav-link" href="loginforma.php"><i class="fas fa-sign-in-alt"></i> LOG IN / SIGN IN</a>
+                <a class="nav-link" href="loginforma.php"><i class="fas fa-sign-in-alt"></i> ПРИЈАВА</a>
                 </li> 
                 <?php } ?>
             </ul>

@@ -28,14 +28,14 @@ $rowKat = $resultKat->fetch_array();
 <div class="proizvodSlika">
 <div class="row">
   <div class="col-sm-12 col-md-6">
-<img class='img-thumbnail' src='admin/<?php echo $row['Slika']; ?>' alt="...">
+<img class='img-thumbnail' src='admin/img/proizvodi/<?php echo $row['Slika']; ?>' alt="...">
 </div>
   <div class="col-sm-12 col-md-6">
 <?php if($row['Kolicina']>0){ ?>  
   <p>Цена: <?php echo number_format($row['Cena'],2); ?> динара</p>
   <?php if (isset( $_SESSION['login_user'] ) ) { ?>
   <a class="btn btn-primary" id="fetchUserDataBtn" href="ses_korpa.php?id=<?php echo $row['ID'] ?>" role="button">ДОДАЈ У КОРПУ</a>
-  <?php } else { ?><a href="loginforma.php">ULOGUJTE SE</a> DA BISTE KUPILI PROIZVOD <?php }
+  <?php } else { ?><div class='font-weight-bold'><a href="loginforma.php">ПРИЈАВИТЕ СЕ</a> да бисте купили производ</div><?php }
   } else { ?>
     <p class="nijedostupno">НИЈЕ ДОСТУПНО</p>
  <?php } ?>
@@ -43,15 +43,13 @@ $rowKat = $resultKat->fetch_array();
 </div>
 <br>
 <p class="text-justify"><?php echo $row['Opis']; ?></p>
+</div>
 
+</div>
 
 <?php
 $result->close(); 
 $mysqli->close();
-?>
-</div>
-</div>
 
-<?php
 include "footer.php";
 ?>

@@ -27,6 +27,7 @@ if (isset($_GET['id'])) {
 }
 ?>
 
+
 <div class="row justify-content-center">
     <p><?php echo $row['Naziv'] ?></p>
     <img src="<?php echo $upload_dir.$row['Slika'] ?>" height="200">

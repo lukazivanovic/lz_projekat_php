@@ -47,7 +47,7 @@ while($row = mysqli_fetch_array($result))
   $output .= '<div class="carousel-item">';
   }
   $output .= '
-  <img src="admin/'.$row['Slika'].'" class="d-block w-100" alt="'.$row['Alt'].'">
+  <img src="admin/img/carousel/'.$row['Slika'].'" class="d-block w-100" alt="'.$row['Alt'].'">
   <div class="carousel-caption d-none d-md-block">
     <h5 class="text-white bg-dark">'.$row['Naslov'].'</h5>
     <p class="text-white bg-dark">'.$row['Opis'].'</p>
