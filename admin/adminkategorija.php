@@ -51,7 +51,7 @@ while($row = mysqli_fetch_array($result)) {
     echo "<tr>";
       echo "<th scope='row'>".$row['ID']."</th>";
       echo "<td>".$row['Naziv']."</td>";
-      echo "<td><img src='img/kategorije/".$row['Slika']."'>".$row['Slika']."</td>";
+      echo "<td><img src='img/kategorije/".$row['Slika']."'></td>";
       ?>
       <td><a href="katvidi.php?id=<?php echo $row['ID'] ?>" class="btn btn-success"><i class="fa fa-eye"></i></a>
       <a href="katizmeni.php?id=<?php echo $row['ID'] ?>" class="btn btn-info"><i class="fa fa-user-edit"></i></a>

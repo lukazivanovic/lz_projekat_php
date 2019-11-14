@@ -80,7 +80,7 @@ if(isset($_POST['Submit'])){
     </div>
     <div class="form-group">
       <label for="image">изабери слику</label>
-      <div class="col-md-6">
+      <div>
         <img src="<?php echo $upload_dir.$row['Slika'] ?>" width="100">
         <input type="file" class="form-control" name="image" value="">
       </div>

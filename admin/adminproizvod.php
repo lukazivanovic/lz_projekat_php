@@ -57,7 +57,7 @@ while($row = mysqli_fetch_assoc($result)) { ?>
       echo "<td class='opistabela'>".$row['Opis']."</td>";
       echo "<td>".$row['Kolicina']."</td>";
       echo "<td>".$row['Cena']."</td>";
-      echo "<td><img src='img/proizvodi/".$row['Slika']."'>".$row['Slika']."</td>"; 
+      echo "<td><img src='img/proizvodi/".$row['Slika']."'></td>"; 
       ?>
       <td><a href="providi.php?id=<?php echo $row['ID'] ?>" class="btn btn-success"><i class="fa fa-eye"></i></a>
       <a href="proizmeni.php?id=<?php echo $row['ID'] ?>" class="btn btn-info"><i class="fa fa-user-edit"></i></a>

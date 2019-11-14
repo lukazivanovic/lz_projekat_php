@@ -63,10 +63,10 @@ if(isset($_POST['Submit'])){
     if(!isset($errorMsg)){
         $sql = "update proizvod 
         set Kategorija = '".$kategorija."',
-        set Naziv = '".$name."',
-        set Opis = '".$opis."',
-        set Kolicina = '".$kolicina."',
-        set Cena = '".$cena."',
+        Naziv = '".$name."',
+        Opis = '".$opis."',
+        Kolicina = '".$kolicina."',
+        Cena = '".$cena."',
         Slika = '".$pic."'
         where ID=".$id;
         $result = mysqli_query($mysqli, $sql);
@@ -104,7 +104,7 @@ if(isset($_POST['Submit'])){
     </div>
     <div class="form-group">
       <label for="image">изабери слику</label>
-      <div class="col-md-6">
+      <div>
         <img src="<?php echo $upload_dir.$row['Slika'] ?>" width="100">
         <input type="file" class="form-control" name="image" value="">
       </div>

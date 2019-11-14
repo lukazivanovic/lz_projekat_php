@@ -36,6 +36,7 @@ if (isset($_GET['id'])) {
   <p><?php echo $row['Naziv']; ?></p>
   <p>Количина: <?php echo $row['Kolicina']; ?></p>
   <p>Цена: <?php echo number_format($row['Cena'],2); ?> динара</p>
+  <p><?php echo $row['Slika']; ?></p>
 </div>
 </div>
 <br>

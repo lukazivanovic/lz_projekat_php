@@ -28,9 +28,10 @@ if (isset($_GET['id'])) {
 ?>
 
 
-<div class="row justify-content-center">
+<div class="justify-content-center">
     <p><?php echo $row['Naziv'] ?></p>
     <img src="<?php echo $upload_dir.$row['Slika'] ?>" height="200">
+    <p><?php echo $row['Slika'] ?></p>
 </div>
 
 </div>
