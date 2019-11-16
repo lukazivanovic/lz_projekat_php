@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2019 at 01:13 PM
+-- Generation Time: Nov 16, 2019 at 04:38 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -117,7 +117,8 @@ CREATE TABLE `kupac` (
 
 INSERT INTO `kupac` (`ID`, `Korisnicko_ime`, `Lozinka`, `Ime`, `Prezime`, `Telefon`, `Email`, `Grad`, `Post_broj`, `Adresa`) VALUES
 (1, 'azerty123', 'pass', 'Bob', 'Smith', '060/1234567', 'b@b.com', 'Toronto', '55555', 'Novi bulevar 310/34'),
-(2, 'ana', 'ana', 'Ana', 'Jovic', '061/6655447', 'ana@a.com', 'Chicago', '12321', '2. Rimska 3a');
+(2, 'ana', 'ana', 'Ana', 'Jovic', '061/6655447', 'ana@a.com', 'Chicago', '12321', '2. Rimska 3a'),
+(3, 'alan', 'alan', 'Alan', 'Davidson', '064/354-9752', 'alen@al.com', 'Boston', '8798493', '53b Central Street');
 
 -- --------------------------------------------------------
 
@@ -210,7 +211,7 @@ ALTER TABLE `kategorija`
 -- AUTO_INCREMENT for table `kupac`
 --
 ALTER TABLE `kupac`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `proizvod`
