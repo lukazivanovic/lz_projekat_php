@@ -11,9 +11,9 @@ class Baza{
 
     function slike_galerije()  //kod tebe se zove make_query u galerija.php
     {
-    $query = "SELECT * FROM galerija ORDER BY ID ASC";
-    $result = $this->conn->query($query);
-    return $result;
+        $query = "SELECT * FROM galerija ORDER BY ID ASC";
+        $result = $this->conn->query($query);
+        return $result;
     }
     //... i tako za sve funkcije koje pozivaju bilo koje podatke iz baze
 }

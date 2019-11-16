@@ -18,7 +18,9 @@ header("location: profil.php");
                     <label>Лозинка :</label>
                     <input id="password" name="password" placeholder="**********" type="password">
                     <input name="submit" type="submit" value=" ПРИЈАВИ СЕ ">
-                    <span><?php echo $error; ?></span>
+                    <span><?php echo $error; ?></span><br><br>
+                    <a href="registerforma.php">регистрација новог корисника</a><br><br>
+                    <a href="password.php">заборављена лозинка</a>
                 </form>
             </div>
         </div>

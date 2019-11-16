@@ -12,12 +12,12 @@ mysqli_set_charset( $conn, 'utf8');
 $upload_dir = 'img/kategorije/';
 
 if (isset($_POST['Submit'])) {
-$name = $_POST['name'];
-$imgName = $_FILES['image']['name'];
+	$name = $_POST['name'];
+	$imgName = $_FILES['image']['name'];
 	$imgTmp = $_FILES['image']['tmp_name'];
 	$imgSize = $_FILES['image']['size'];
-if(empty($name)){
-		$errorMsg = 'Please input name';
+	if(empty($name)){
+			$errorMsg = 'Please input name';
 	}else{
 		$imgExt = strtolower(pathinfo($imgName, PATHINFO_EXTENSION));
 		$allowExt  = array('jpeg', 'jpg', 'png', 'gif');
@@ -47,27 +47,26 @@ if(empty($name)){
 ?>
 
 <div class="main">
-<div class="container">
-
-<div class="row justify-content-center">
-	<div class="col-md-6">
-		<a class="btn btn-primary" href="adminkategorija.php" role="button">Назад</a>
-		<form class="" action="" method="post" enctype="multipart/form-data">
-			<div class="form-group">
-			<label for="name">назив</label>
-			<input type="text" class="form-control" name="name"  placeholder="назив" value="">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-6">
+				<a class="btn btn-primary" href="adminkategorija.php" role="button">Назад</a>
+				<form class="" action="" method="post" enctype="multipart/form-data">
+					<div class="form-group">
+						<label for="name">назив</label>
+						<input type="text" class="form-control" name="name" placeholder="назив" value="">
+					</div>
+					<div class="form-group">
+						<label for="image">изабери слику</label>
+						<input type="file" class="form-control" name="image" value="">
+					</div>
+					<div class="form-group">
+						<button type="submit" name="Submit" class="btn btn-primary waves">направи категорију</button>
+					</div>
+				</form>
 			</div>
-			<div class="form-group">
-			<label for="image">изабери слику</label>
-			<input type="file" class="form-control" name="image" value="">
-			</div>
-			<div class="form-group">
-			<button type="submit" name="Submit" class="btn btn-primary waves">направи категорију</button>
-			</div>
-		</form>
+		</div>
 	</div>
-</div>
-
 </div>
 
 <?php

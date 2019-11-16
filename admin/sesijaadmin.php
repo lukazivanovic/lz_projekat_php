@@ -11,7 +11,7 @@ $ses_sql=mysqli_query("select Korisnicko_ime from administrator where Korisnicko
 $row = mysqli_fetch_assoc($ses_sql);
 $login_session =$row['Korisnicko_ime'];
 if(!isset($login_session)){
-mysqli_close($connection); // Closing Connection
-header('Location: index.php'); // Redirecting To Home Page
+    mysqli_close($connection); // Closing Connection
+    header('Location: index.php'); // Redirecting To Home Page
 }
 ?>

@@ -1,16 +1,13 @@
 <?php
 include "header.php";
 $id = $_GET['id'] ?? '';
-?>
 
-<?php 
 $mysqli = new mysqli("localhost", "root", "", "lz_php_projekat");
 mysqli_set_charset( $mysqli, 'utf8');
 $query = "SELECT * FROM proizvod WHERE Kategorija=$id";
 $result = $mysqli->query($query);
 $queryKat = "SELECT * FROM kategorija WHERE ID=$id";
 $resultKat = $mysqli->query($queryKat);
-
 $rowKat = $resultKat->fetch_assoc();
 ?>
 
@@ -22,39 +19,36 @@ $rowKat = $resultKat->fetch_assoc();
 </nav>
 
 <div class="container-fluid" id="prodavnica">
+  <div class="d-flex justify-content-center">
+    <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Претражи" aria-label="Search">
+        <button class="btn btn-primary my-2 my-sm-0" type="submit">Претражи</button>
+    </form>
+  </div>
 
-<div class="d-flex justify-content-center">
-<form class="form-inline my-2 my-lg-0">
-    <input class="form-control mr-sm-2" type="search" placeholder="Претражи" aria-label="Search">
-    <button class="btn btn-primary my-2 my-sm-0" type="submit">Претражи</button>
-</form>
-</div>
+  <div class="row d-flex justify-content-center">
+  <?php
+    while($row = mysqli_fetch_assoc($result)) { ?>
+    <a class="text-decoration-none" href="proizvod.php?id=<?php echo $row['ID']; ?>">
+    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center">
+      <div class="card">
+        <img src="admin/img/proizvodi/<?php echo $row['Slika']; ?>" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text"><?php echo $row['Naziv']; ?></p>
+          <?php if($row['Kolicina']<=0){ ?>
+            <p class="nijedostupno">НИЈЕ ДОСТУПНО</p>
+          <?php } ?>
+        </div>
+      </div>
+    </div>
+    </a>
+    <?php
+    }
 
-<div class="row d-flex justify-content-center">
-
-<?php
-while($row = mysqli_fetch_assoc($result)) { ?>
-<a class="text-decoration-none" href="proizvod.php?id=<?php echo $row['ID']; ?>">
-<div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 text-center">
-<div class="card">
-<img src="admin/img/proizvodi/<?php echo $row['Slika']; ?>" class="card-img-top" alt="...">
-<div class="card-body">
-<p class="card-text"><?php echo $row['Naziv']; ?></p>
-<?php if($row['Kolicina']<=0){ ?>
-<p class="nijedostupno">НИЈЕ ДОСТУПНО</p>
-  <?php } ?>
-</div>
-</div>
-</div>
-</a>
-<?php
-}
-
-$result->close();
-$mysqli->close();
-?>
-
-</div>
+    $result->close();
+    $mysqli->close();
+  ?>
+  </div>
 </div>
 
 <?php

@@ -13,50 +13,50 @@ function make_query($mysqli)
 
 function make_slide_indicators($mysqli)
 {
-$output = ''; 
-$count = 0;
-$result = make_query($mysqli);
-while($row = mysqli_fetch_array($result))
-{
-  if($count == 0)
+  $output = ''; 
+  $count = 0;
+  $result = make_query($mysqli);
+  while($row = mysqli_fetch_array($result))
   {
-  $output .= '<li data-target="#dynamic_slide_show" data-slide-to="'.$count.'" class="active"></li>';
+    if($count == 0)
+    {
+      $output .= '<li data-target="#dynamic_slide_show" data-slide-to="'.$count.'" class="active"></li>';
+    }
+    else
+    {
+      $output .= '<li data-target="#dynamic_slide_show" data-slide-to="'.$count.'"></li>';
+    }
+    $count = $count + 1;
   }
-  else
-  {
-  $output .= '<li data-target="#dynamic_slide_show" data-slide-to="'.$count.'"></li>';
-  }
-  $count = $count + 1;
-}
-return $output;
+  return $output;
 }
 
 function make_slides($mysqli)
 {
-$output = '';
-$count = 0;
-$result = make_query($mysqli);
-while($row = mysqli_fetch_array($result))
-{
-  if($count == 0)
+  $output = '';
+  $count = 0;
+  $result = make_query($mysqli);
+  while($row = mysqli_fetch_array($result))
   {
-  $output .= '<div class="carousel-item active">';
+    if($count == 0)
+    {
+      $output .= '<div class="carousel-item active">';
+    }
+    else
+    {
+      $output .= '<div class="carousel-item">';
+    }
+    $output .= '
+    <img src="admin/img/carousel/'.$row['Slika'].'" class="d-block w-100" alt="'.$row['Alt'].'">
+    <div class="carousel-caption d-none d-md-block">
+      <h5 class="text-white bg-dark">'.$row['Naslov'].'</h5>
+      <p class="text-white bg-dark">'.$row['Opis'].'</p>
+    </div>
+    </div>
+    ';
+    $count = $count + 1;
   }
-  else
-  {
-  $output .= '<div class="carousel-item">';
-  }
-  $output .= '
-  <img src="admin/img/carousel/'.$row['Slika'].'" class="d-block w-100" alt="'.$row['Alt'].'">
-  <div class="carousel-caption d-none d-md-block">
-    <h5 class="text-white bg-dark">'.$row['Naslov'].'</h5>
-    <p class="text-white bg-dark">'.$row['Opis'].'</p>
-  </div>
-  </div>
-  ';
-  $count = $count + 1;
-}
-return $output;
+  return $output;
 }
 ?>  
 
@@ -65,7 +65,7 @@ return $output;
     <div class="galerija">
       <div id="dynamic_slide_show" class="carousel slide" data-ride="carousel" data-interval="3000">
         <div class="carousel-inner">
-        <?php echo make_slides($mysqli); ?>
+          <?php echo make_slides($mysqli); ?>
         </div>
         <a class="carousel-control-prev" href="#dynamic_slide_show" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -82,8 +82,6 @@ return $output;
 
 <?php
 $mysqli->close();
-?>
 
-<?php
 include "footer.php";
 ?>

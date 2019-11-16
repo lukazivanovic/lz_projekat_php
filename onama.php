@@ -3,11 +3,11 @@ include "header.php";
 ?>
 
 <div class="main">
-<div class="container">
-<h1>o nama...</h1>
+    <div class="container">
+        <h1>o nama...</h1>
+    </div>
 </div>
 
-</div>
 <?php
 include "footer.php";
 ?>
