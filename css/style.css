@@ -16,6 +16,88 @@ body{
     padding-bottom: 120px;
 }
 
+/****************POCETNA STRANA****************/
+#cover {
+    background-color: #666;
+    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2)), url("../admin/img/cover.jpg");
+    background-attachment: scroll, scroll, fixed;
+    background-position: top left, top, center center;
+    background-repeat: repeat, no-repeat, no-repeat;
+    background-size: auto, auto, cover;
+    color: #fff;
+    height: 400px;
+    text-align: center;
+}
+
+#banner {
+    color: #fff;
+    height: 100px;
+    width: 400px;
+    position: relative;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#banner h1 {
+    margin-bottom: 15px;
+}
+
+#banner p {
+    margin-bottom: 40px;
+}
+
+#content {
+    padding-top: 30px;
+}
+  
+/****************INFORMACIJE I PROMOCIJE****************/
+.row.equal-cols {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.row.equal-cols:before,
+.row.equal-cols:after {
+    display: block;
+}
+
+.row.equal-cols>[class*='col-'] {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.row.equal-cols>[class*='col-']>* {
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+
+#onamaSlika {
+    width: 100%;
+    height: auto;
+}
+
+/****************CRVENA TRAKA****************/
+#brojevi {
+    background-color: rgb(163, 9, 9);
+    margin-bottom: -40px;
+}
+  
+#brojevi div {
+    padding-top: 15px;
+    padding-bottom: 5px;
+    color: #fff;
+}
+
 /****************KONTAKT****************/
 form {
     padding-bottom: 50px;

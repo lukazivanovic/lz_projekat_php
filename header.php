@@ -25,9 +25,6 @@ session_start();
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="onama.php"><i class="fas fa-book"></i> О нама</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="galerija.php"><i class="fas fa-images"></i> Галерија</a>
                 </li>
                 <li class="nav-item">
