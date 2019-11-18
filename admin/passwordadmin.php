@@ -1,8 +1,8 @@
 <?php
 include "header.php";
 
-if (isset( $_SESSION['login_user'])) { 
-    header("location: loginforma.php");
+if (isset( $_SESSION['login_admin'])) { 
+    header("location: loginformaadmin.php");
 }
 
 // Create database connection
@@ -11,7 +11,7 @@ mysqli_set_charset( $mysqli, 'utf8');
 
 if (isset($_GET['id'])) {
 $id = $_GET['id'];
-$sql = "select * from kupac";
+$sql = "select * from administrator";
 $result = mysqli_query($mysqli, $sql);
 if (mysqli_num_rows($result) > 0) {
     $row = mysqli_fetch_assoc($result);
@@ -28,11 +28,11 @@ if(isset($_POST['Submit'])){
 
     if($lozinka2 == $lozinka3){
         if(!isset($errorMsg)){
-            $sql = "update kupac set Lozinka = '".$lozinka2."' where Korisnicko_ime='".$kor_ime."' and Email='".$email."'";
+            $sql = "update administrator set Lozinka = '".$lozinka2."' where Korisnicko_ime='".$kor_ime."' and Email='".$email."'";
             $result = mysqli_query($mysqli, $sql);
             if($result){
                 $successMsg = 'New record updated successfully';
-                header('Location:loginforma.php');
+                header('Location:loginformaadmin.php');
             }else{
                 $errorMsg = 'Error '.mysqli_error($mysqli);
             }
@@ -45,7 +45,7 @@ if(isset($_POST['Submit'])){
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-6">
-				<a class="btn btn-primary" href="loginforma.php" role="button">Назад</a>
+				<a class="btn btn-primary" href="loginformaadmin.php" role="button">Назад</a>
 				<form class="" action="" method="post" enctype="multipart/form-data">
 					<div class="form-group">
 						<label for="name">корисничко име</label>

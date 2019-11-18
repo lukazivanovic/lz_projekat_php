@@ -37,7 +37,7 @@ session_start();
             </li>
             <?php if(isset($_SESSION["login_admin"])){ ?>
             <li class="nav-item">
-                <a class="nav-link navbar-text text-success" href="profil.php"><i class="fas fa-user-circle"></i>
+                <a class="nav-link navbar-text text-success" href="profiladmin.php"><i class="fas fa-user-circle"></i>
                     <?php echo $_SESSION["login_admin"]; ?>
                 </a>
             </li>

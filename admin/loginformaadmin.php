@@ -18,7 +18,8 @@ header("location: index.php");
                     <label>лозинка :</label>
                     <input id="password" name="password" placeholder="*****" type="password">
                     <input name="submit" type="submit" value=" ПРИЈАВИ СЕ ">
-                    <span><?php echo $error; ?></span>
+                    <span><?php echo $error; ?></span><br><br>
+                    <a href="passwordadmin.php">заборављена лозинка</a>
                 </form>
             </div>
         </div>

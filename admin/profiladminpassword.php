@@ -1,7 +1,7 @@
 <?php
 include "header.php";
 
-if (!isset( $_SESSION['login_user'])) { 
+if (!isset( $_SESSION['login_admin'])) { 
     header("location: index.php");
 }
 
@@ -11,9 +11,9 @@ $connection = mysqli_connect("localhost", "root", "");
 $db = mysqli_select_db($connection, "lz_php_projekat");
 //session_start();// Starting Session
 // Storing Session
-$user_check=$_SESSION['login_user'];
+$user_check=$_SESSION['login_admin'];
 // SQL Query To Fetch Complete Information Of User
-$ses_sql=mysqli_query($connection, "select * from kupac where Korisnicko_ime='$user_check'");
+$ses_sql=mysqli_query($connection, "select * from administrator where Korisnicko_ime='$user_check'");
 $row = mysqli_fetch_assoc($ses_sql);
 
 if(isset($_POST['Submit'])){
@@ -24,7 +24,7 @@ if(isset($_POST['Submit'])){
     if($lozinka1 == $row["Lozinka"]){
         if($lozinka2 == $lozinka3){
             if(!isset($errorMsg)){
-                $sql = "update kupac set Lozinka = '".$lozinka2."' where ID=".$row['ID'];
+                $sql = "update administrator set Lozinka = '".$lozinka2."' where ID=".$row['ID'];
                 $result = mysqli_query($connection, $sql);
                 if($result){
                     $successMsg = 'New record updated successfully';
@@ -42,7 +42,7 @@ if(isset($_POST['Submit'])){
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-6">
-				<a class="btn btn-primary" href="profil.php" role="button">Назад</a>
+				<a class="btn btn-primary" href="profiladmin.php" role="button">Назад</a>
                 <form class="" action="" method="post" enctype="multipart/form-data">
                     <div class="form-group">
 						<label for="name">стара лозинка</label>
