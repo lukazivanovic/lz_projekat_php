@@ -28,14 +28,22 @@ $rowKat = $resultKat->fetch_array();
         <img class='img-thumbnail' src='admin/img/proizvodi/<?php echo $row['Slika']; ?>' alt="...">
       </div>
       <div class="col-sm-12 col-md-6">
-        <?php if($row['Kolicina']>0){ ?>  
-        <p>Цена: <?php echo number_format($row['Cena'],2); ?> динара</p>
-        <?php if (isset( $_SESSION['login_user'] ) ) { ?>
-        <a class="btn btn-primary" id="fetchUserDataBtn" href="ses_korpa.php?id=<?php echo $row['ID'] ?>" role="button">ДОДАЈ У КОРПУ</a>
-        <?php } else { ?><div class='font-weight-bold'><a href="loginforma.php">ПРИЈАВИТЕ СЕ</a> да бисте купили производ</div><?php }
-        } else { ?>
-          <p class="nijedostupno">НИЈЕ ДОСТУПНО</p>
-        <?php } ?>
+        <form class="" action="ses_korpa.php?id=<?php echo $row['ID'] ?>" method="post" enctype="multipart/form-data">
+          <?php if($row['Kolicina']>0){ ?>  
+          <p>Цена: <?php echo number_format($row['Cena'],2); ?> динара</p>
+          <?php if(isset($_SESSION['login_user'])){ ?>
+          <div class="form-group">
+						<label for="prokolicina">количина</label>
+						<input type="number" class="form-control-sm" name="prokolicina" value="" required>
+          </div>
+          <div class="form-group">
+						<button type="submit" name="Submit" class="btn btn-primary waves">ДОДАЈ У КОРПУ</button>
+					</div>
+          <?php } else { ?><div class='font-weight-bold'><a href="loginforma.php">ПРИЈАВИТЕ СЕ</a> да бисте купили производ</div><?php }
+          } else { ?>
+            <p class="nijedostupno">НИЈЕ ДОСТУПНО</p>
+          <?php } ?>
+        </form>
       </div>
     </div>
   <br>

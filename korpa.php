@@ -10,6 +10,8 @@ include "header.php";
         <th scope="col">Опис</th>
         <th scope="col">Слика</th>
         <th scope="col">Цена</th>
+        <th scope="col">Кол.</th>
+        <th scope="col">Ук. цена</th>
         <th scope="col"></th>
       </tr>
     </thead>
@@ -19,13 +21,34 @@ include "header.php";
       if(isset($_SESSION['korpa'])){
         foreach($_SESSION['korpa'] as $key=>$predmetUKorpi) {
           echo "<tr>";
-            echo "<td>".$predmetUKorpi[0]."</td>";
-            echo "<td class='opistabela'>".$predmetUKorpi[1]."</td>";
-            echo "<td><img src='admin/img/proizvodi/".$predmetUKorpi[3]."'></td>";
-            echo "<td class='font-weight-bold'>".number_format($predmetUKorpi[2],2)."</td>";
-            $ukupnaCena += $predmetUKorpi[2];
-            echo "<td><a class='btn btn-primary' href='ses_korpa_brisanje.php?id=".$key."' role='button'>уклони из корпе</a></td>";
-        echo "</tr>";
+          echo "<td>".$predmetUKorpi[1]."</td>";
+          echo "<td class='opistabela'>".$predmetUKorpi[2]."</td>";
+          echo "<td><img src='admin/img/proizvodi/".$predmetUKorpi[6]."'></td>";
+          echo "<td class='font-weight-bold'>".number_format($predmetUKorpi[3],2)."</td>";
+          echo "<td class='font-weight-bold'>".$predmetUKorpi[4]."</td>";
+          echo "<td class='font-weight-bold'>".number_format($predmetUKorpi[5],2)."</td>";
+          echo "<td><a class='btn btn-primary' href='ses_korpa_brisanje.php?id=".$key."' role='button'>уклони из корпе</a></td>";
+          $ukupnaCena += $predmetUKorpi[5];
+          echo "</tr>";
+        }
+  
+        if(isset($_POST['buttonRacun'])) {
+          foreach($_SESSION['korpa'] as $key=>$predmetUKorpi) {
+            $conn = mysqli_connect("localhost", "root", "", "lz_php_projekat");
+            mysqli_set_charset($conn, 'utf8');
+            $sql = "insert into racun(Kupac_naziv, Datum, Ukupna_cena) values('".$_SESSION['login_user']."', '".date("Y-m-d")."', '".$ukupnaCena."')";
+            $result = mysqli_query($conn, $sql);
+            $racun_id =  $conn->insert_id;
+          }
+
+          foreach($_SESSION['korpa'] as $key=>$predmetUKorpi) {
+            $conn1 = mysqli_connect("localhost", "root", "", "lz_php_projekat");
+            mysqli_set_charset($conn1, 'utf8');
+            $sql1 = "insert into stavke_racuna(Racun_id, Proizvod_id, Proizvod_naziv, Prozivod_cena, Kolicina, Ukupna_cena) values('".$racun_id."', '".$predmetUKorpi[0]."', '".$predmetUKorpi[1]."', '".$predmetUKorpi[3]."', '".$predmetUKorpi[4]."', '".$predmetUKorpi[5]."')";
+            $result = mysqli_query($conn1, $sql1);
+          }        
+          unset($_SESSION['korpa']);
+          //header("Refresh:0");
         }
       }
       ?>
@@ -40,9 +63,13 @@ include "header.php";
     </p>
   <div class="collapse" id="collapseExample">
     <div class="alert alert-warning" role="alert">
-      Да ли сте сигурни да купујете ове производе? 
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">НЕ</button>
-      <button type="button" class="btn btn-primary btn-lg">ДА</button>
+      <form id="formaKorpa" action="" method="post">
+        <div class="form-group">
+          <label>Да ли сте сигурни да купујете ове производе?</label>
+          <button type="button" class="btn btn-primary btn-lg" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">НЕ</button>
+          <button type="submit" name="buttonRacun" class="btn btn-primary btn-lg">ДА</button>
+        </div>
+      <form>
     </div>
   </div>
   <?php } else { ?>

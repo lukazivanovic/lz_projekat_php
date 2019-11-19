@@ -12,10 +12,16 @@ if(empty($_SESSION['korpa'])){
 }
 
 $korpa_predmet = array();
-array_push($korpa_predmet, $row['Naziv'], $row['Opis'], $row['Cena'], $row['Slika']);
+$prokolicina = $_POST['prokolicina'];
+$proUkupnaCena = $row['Cena'] * $prokolicina;
+array_push($korpa_predmet, $row['ID'], $row['Naziv'], $row['Opis'], $row['Cena'], $prokolicina, $proUkupnaCena, $row['Slika']);
 array_push($_SESSION['korpa'], $korpa_predmet);
 
+$ukupnaCena = 0;
+
 header('Location: korpa.php');
+
+
 $result->close();
 $mysqli->close();
 ?>

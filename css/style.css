@@ -176,6 +176,14 @@ iframe {
     color: red;
 }
 
+/****************KORPA****************/
+#formaKorpa{
+    padding-bottom: 0px;
+}
+#formaKorpa .form-group{
+    margin-bottom: 0px;
+}
+
 /****************TABELA****************/
 #tabela img{
     height: 60px;
