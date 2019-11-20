@@ -18,6 +18,26 @@ include "header.php";
     <tbody>
       <?php
       $ukupnaCena = 0;
+
+      if(isset($_POST['buttonRacun'])) {
+        header("Location: index.php");
+        foreach($_SESSION['korpa'] as $key=>$predmetUKorpi) {
+          $conn = mysqli_connect("localhost", "root", "", "lz_php_projekat");
+          mysqli_set_charset($conn, 'utf8');
+          $sql = "insert into racun(Kupac_naziv, Datum, Ukupna_cena) values('".$_SESSION['login_user']."', '".date("Y-m-d")."', '".$ukupnaCena."')";
+          $result = mysqli_query($conn, $sql);
+          $racun_id =  $conn->insert_id;
+        }
+
+        foreach($_SESSION['korpa'] as $key=>$predmetUKorpi) {
+          $conn1 = mysqli_connect("localhost", "root", "", "lz_php_projekat");
+          mysqli_set_charset($conn1, 'utf8');
+          $sql1 = "insert into stavke_racuna(Racun_id, Proizvod_id, Proizvod_naziv, Prozivod_cena, Kolicina, Ukupna_cena) values('".$racun_id."', '".$predmetUKorpi[0]."', '".$predmetUKorpi[1]."', '".$predmetUKorpi[3]."', '".$predmetUKorpi[4]."', '".$predmetUKorpi[5]."')";
+          $result = mysqli_query($conn1, $sql1);
+        }        
+        unset($_SESSION['korpa']);
+      }
+
       if(isset($_SESSION['korpa'])){
         foreach($_SESSION['korpa'] as $key=>$predmetUKorpi) {
           echo "<tr>";
@@ -32,24 +52,6 @@ include "header.php";
           echo "</tr>";
         }
   
-        if(isset($_POST['buttonRacun'])) {
-          foreach($_SESSION['korpa'] as $key=>$predmetUKorpi) {
-            $conn = mysqli_connect("localhost", "root", "", "lz_php_projekat");
-            mysqli_set_charset($conn, 'utf8');
-            $sql = "insert into racun(Kupac_naziv, Datum, Ukupna_cena) values('".$_SESSION['login_user']."', '".date("Y-m-d")."', '".$ukupnaCena."')";
-            $result = mysqli_query($conn, $sql);
-            $racun_id =  $conn->insert_id;
-          }
-
-          foreach($_SESSION['korpa'] as $key=>$predmetUKorpi) {
-            $conn1 = mysqli_connect("localhost", "root", "", "lz_php_projekat");
-            mysqli_set_charset($conn1, 'utf8');
-            $sql1 = "insert into stavke_racuna(Racun_id, Proizvod_id, Proizvod_naziv, Prozivod_cena, Kolicina, Ukupna_cena) values('".$racun_id."', '".$predmetUKorpi[0]."', '".$predmetUKorpi[1]."', '".$predmetUKorpi[3]."', '".$predmetUKorpi[4]."', '".$predmetUKorpi[5]."')";
-            $result = mysqli_query($conn1, $sql1);
-          }        
-          unset($_SESSION['korpa']);
-          //header("Refresh:0");
-        }
       }
       ?>
     </tbody>

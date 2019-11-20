@@ -19,7 +19,8 @@ if (!isset( $_SESSION['login_admin'] ) ) {
       if(mysqli_num_rows($result) > 0){
         $row = mysqli_fetch_assoc($result);
         $sql = "delete from racun where ID=".$id;
-        if(mysqli_query($mysqli, $sql)){
+        $sql1 = "delete from stavke_racuna where Racun_id=".$id;
+        if(mysqli_query($mysqli, $sql) && mysqli_query($mysqli, $sql1)){
           header('location:adminracun.php');
         }
       }

@@ -31,23 +31,21 @@ if (!isset( $_SESSION['login_admin'] ) ) {
             $id = $_GET['id'];
             $sql = "select * from stavke_racuna where Racun_id=".$id;
             $result = mysqli_query($mysqli, $sql);
-            if (mysqli_num_rows($result) > 0) {
-                $sr = mysqli_fetch_assoc($result);
-            }else {
-                $errorMsg = 'Could not Find Any Record';
-            }
 
-            while($sr = mysqli_fetch_assoc($result)) {
+            if(mysqli_num_rows($result) > 0){
+              $row = mysqli_fetch_assoc($result);
+              while($row = mysqli_fetch_array($result)) {
             echo "<tr>";
-            echo "<td>".$sr['ID']."</td>";
-            echo "<td>".$sr['Racun_id']."</td>";
-            echo "<td>".$sr['Proizvod_id']."</td>";
-            echo "<td>".$sr['Proizvod_naziv']."</td>";
-            echo "<td>".number_format($sr['Prozivod_cena'],2)."</td>";
-            echo "<td>".$sr['Kolicina']."</td>";
-            echo "<td>".number_format($sr['Ukupna_cena'],2)."</td>";
+            echo "<td>".$row['ID']."</td>";
+            echo "<td>".$row['Racun_id']."</td>";
+            echo "<td>".$row['Proizvod_id']."</td>";
+            echo "<td>".$row['Proizvod_naziv']."</td>";
+            echo "<td>".number_format($row['Prozivod_cena'],2)."</td>";
+            echo "<td>".$row['Kolicina']."</td>";
+            echo "<td>".number_format($row['Ukupna_cena'],2)."</td>";
             echo "</tr>";
             }
+          }
         }
         ?>
       </tbody>
