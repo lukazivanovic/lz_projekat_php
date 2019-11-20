@@ -32,25 +32,33 @@ if (!isset( $_SESSION['login_admin'] ) ) {
             $sql = "select * from stavke_racuna where Racun_id=".$id;
             $result = mysqli_query($mysqli, $sql);
 
+            $ukcena = 0;
             if(mysqli_num_rows($result) > 0){
-              $row = mysqli_fetch_assoc($result);
-              while($row = mysqli_fetch_array($result)) {
-            echo "<tr>";
-            echo "<td>".$row['ID']."</td>";
-            echo "<td>".$row['Racun_id']."</td>";
-            echo "<td>".$row['Proizvod_id']."</td>";
-            echo "<td>".$row['Proizvod_naziv']."</td>";
-            echo "<td>".number_format($row['Prozivod_cena'],2)."</td>";
-            echo "<td>".$row['Kolicina']."</td>";
-            echo "<td>".number_format($row['Ukupna_cena'],2)."</td>";
-            echo "</tr>";
+              //$row = mysqli_fetch_assoc($result);
+              while($row = mysqli_fetch_assoc($result)) {
+                echo "<tr>";
+                echo "<td>".$row['ID']."</td>";
+                echo "<td>".$row['Racun_id']."</td>";
+                echo "<td>".$row['Proizvod_id']."</td>";
+                echo "<td>".$row['Proizvod_naziv']."</td>";
+                echo "<td>".number_format($row['Prozivod_cena'],2)."</td>";
+                echo "<td>".$row['Kolicina']."</td>";
+                echo "<td>".number_format($row['Ukupna_cena'],2)."</td>";
+                echo "</tr>";
+                $ukcena += $row['Ukupna_cena'];
+              }
             }
           }
-        }
+          
         ?>
       </tbody>
+      <?php 
+      echo "<tr>";
+      echo "<td colspan='7'><div class='float-right'>Укупна цена: ".number_format($ukcena,2)." динара</div></td>"; 
+      echo "</tr>";
+      ?>
     </table>
-
+    
   </div>
 </div>
 
