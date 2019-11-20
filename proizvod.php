@@ -47,7 +47,7 @@ $rowKat = $resultKat->fetch_array();
       </div>
     </div>
   <br>
-  <p class="text-justify"><?php echo $row['Opis']; ?></p>
+  <p class="text-justify" style="white-space: pre-line;"><?php echo $row['Opis']; ?></p>
   </div>
 </div>
 
