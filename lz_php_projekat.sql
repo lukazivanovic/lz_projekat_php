@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 20, 2019 at 07:04 PM
+-- Generation Time: Nov 21, 2019 at 01:30 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -170,15 +170,15 @@ INSERT INTO `proizvod` (`ID`, `Kategorija`, `Naziv`, `Opis`, `Kolicina`, `Cena`,
 (27, 1, 'Bubnjevi Gretsch Blackhawk E825H2', 'Bubnjevi Gretsch Blackhawk E825H2,Petodelni set od poznate čuvene kompanije Gretsch. Ovi akustični bubnjevi imaju odličan i zadivljujući finiš koji  vas neće ostaviti ravnodušnim. Odnos cena-kvalitet je po našoj proceni više nego očekivan. Bubanj ima inzvaredan pun zvuk.\r\n\r\n \r\n\r\nTom : 10\" x 8\" TT, 12\" x 9\"\r\n\r\n \r\n\r\nFloor Tom : 14\" x 14\"\r\n\r\nBass Bubanj : 22\" x 18\"\r\n\r\nDodoš : 14\" x 5.5\"\r\n\r\nBoja : Liquid Black\r\n\r\nInc Hardware\r\n\r\nGretsch BH-E825H2-LB Blackhawk', 28, '55342.00', '1574270883_7500.jpg'),
 (28, 4, 'Les Vents Francais - Beethoven: Wind Chamber Music', 'Godina: 2018\r\nŽanr: Classical\r\nPakovanje: CD \r\n                                                                                            Opis\r\n\r\nOvo izdanje Warner Classics je sastavljeno od Betovenove muzike. Les Vents Français je iskusio veliki uspeh na koncertima i snimanim izdanjima pa su želeli da se oprobaju i u Betovenovoj muzici, ulazeći tako u veoma nesigurnu teritoriju. \r\n\r\nTracklist\r\n\r\nCD:\r\n\r\n    Trio for 2 oboes & English horn in C major, Op. 87\r\n    Trio for piano, flute & bassoon in G major, WoO 37\r\n    Variations for 2 oboes & English horn in C major on Mozarts La ci darem, WoO 28\r\n    Sonata for horn & piano in F major, Op. 17\r\n    Duo for clarinet & bassoon in B flat major, WoO 27/3', 5, '1599.00', 'Les-Vents-Francais-Beethoven-Wind-Chamber-Music_1533111358.jpg'),
 (29, 4, 'John Coltrane - MY FAVORITE THINGS', ' Godina: 2016\r\nŽanr: Rock\r\nPakovanje: LP \r\nTracklist\r\n\r\n\r\n1. My Favorite Things\r\n2. Ev\'ry Time We Say Goodbye\r\n3. But Not for Me ', 3, '2639.00', '1574270237_1593.jpg'),
-(30, 9, 't-shirt metal men\'s AC-DC - FOR THOSE ABOUT TO ROCK - AMPLIFIED', 'Stylish men\'s high quality sports t-shirt (rashguard/ jersey), by AMPLIFIED.\r\n\r\nIdeal for both sport and casual wear.\r\nThe fabric is slightly elastic.\r\nThe applied fabric ensures excellent transport of sweat away from the skin and guarantees a very high comfort of wearing. \r\nComposition: 100% polyester.\r\n\r\nApprox. dimensions in centimeters (CIRC. is 2x width)\r\n\r\nMeasured in idle state on a flat surface.', 4, '6190.00', '1574270770_6723.jpg'),
+(30, 9, 't-shirt metal mens AC-DC - FOR THOSE ABOUT TO ROCK - AMPLIFIED', 'Stylish mens high quality sports t-shirt (rashguard/ jersey), by AMPLIFIED.\r\n\r\nIdeal for both sport and casual wear.\r\nThe fabric is slightly elastic.\r\nThe applied fabric ensures excellent transport of sweat away from the skin and guarantees a very high comfort of wearing. \r\nComposition: 100% polyester.\r\n\r\nApprox. dimensions in centimeters (CIRC. is 2x width)\r\n\r\nMeasured in idle state on a flat surface.', 4, '6190.00', '1574270770_6723.jpg'),
 (31, 4, 'The Doors - L.A.WOMAN', ' Godina: 1971\r\nŽanr: Rock\r\nPakovanje: LP \r\n Opis\r\n\r\nL.A. Woman je sedmi album američke rok grupe The Doors, ujedno i poslednji njihov album objavljen za života Džima Morisona, izdat u aprilu 1971. godine.\r\n\r\nTracklist\r\n\r\n\r\n1. The Changeling\r\n2. Love Her Madly\r\n3. Been Down So Long\r\n4. Cars Hiss By My Window\r\n5. L.A. Woman\r\n6. L\'America\r\n7. Hyacinth House\r\n8. Crawling King Snake\r\n9. The Wasp ( Texas Radio And The Big Beat )\r\n10. Riders On The Storm\r\n11. Orange County Suite\r\n12. (You Need Meat) Don\'t Go No Further\r\n|\r\nReizdanje klasi?nog albuma legendarnih The Doors na vinilu - u obliku u kom se pojavio kada je prvi put ugledao svetlost dana.', 6, '3513.00', '1574270415_1779.jpg'),
-(32, 9, 't-shirt metal men\'s Kiss - RETRO DESTROYER - PLASTIC HEAD', 'Stylish men\'s t-shirt with high quality print.\r\n\r\nColor: black.\r\n\r\nComposition: 100%. cotton\r\n\r\nApprox. dimensions in centimeters (CIRC. is 2x width) \r\n\r\nPlease note that the dimensions stated in the size chart are only approximate. The actual sizes may slightly vary between different products (or styles). ', 7, '1700.00', '115103_s014.jpg'),
-(33, 9, 't-shirt metal men\'s Queen - FREDDIE MERCURY - PLASTIC HEAD', 'Stylish men\'s t-shirt with high quality print.\r\n\r\nColor: black.\r\n\r\nComposition: 100%. cotton\r\n\r\nApprox. dimensions in centimeters (CIRC. is 2x width) \r\n\r\nPlease note that the dimensions stated in the size chart are only approximate. The actual sizes may slightly vary between different products (or styles). ', 6, '1690.00', '115027_a011.jpg'),
-(34, 9, 't-shirt metal men\'s Stone Temple Pilots - LOGO - PLASTIC HEAD', 'Stylish men\'s t-shirt with high quality print.\r\n\r\nColor: black.\r\n\r\nComposition: 100%. cotton\r\n\r\nApprox. dimensions in centimeters (CIRC. is 2x width) \r\n\r\nPlease note that the dimensions stated in the size chart are only approximate. The actual sizes may slightly vary between different products (or styles). ', 3, '1555.00', '115051_as008.jpg'),
+(32, 9, 't-shirt metal mens Kiss - RETRO DESTROYER - PLASTIC HEAD', 'Stylish mens t-shirt with high quality print.\r\n\r\nColor: black.\r\n\r\nComposition: 100%. cotton\r\n\r\nApprox. dimensions in centimeters (CIRC. is 2x width) \r\n\r\nPlease note that the dimensions stated in the size chart are only approximate. The actual sizes may slightly vary between different products (or styles). ', 7, '1700.00', '115103_s014.jpg'),
+(33, 9, 't-shirt metal mens Queen - FREDDIE MERCURY - PLASTIC HEAD', 'Stylish mens t-shirt with high quality print.\r\n\r\nColor: black.\r\n\r\nComposition: 100%. cotton\r\n\r\nApprox. dimensions in centimeters (CIRC. is 2x width) \r\n\r\nPlease note that the dimensions stated in the size chart are only approximate. The actual sizes may slightly vary between different products (or styles). ', 6, '1690.00', '115027_a011.jpg'),
+(34, 9, 't-shirt metal mens Stone Temple Pilots - LOGO - PLASTIC HEAD', 'Stylish mens t-shirt with high quality print.\r\n\r\nColor: black.\r\n\r\nComposition: 100%. cotton\r\n\r\nApprox. dimensions in centimeters (CIRC. is 2x width) \r\n\r\nPlease note that the dimensions stated in the size chart are only approximate. The actual sizes may slightly vary between different products (or styles). ', 3, '1555.00', '115051_as008.jpg'),
 (35, 4, 'Steve Reich - Music For 18 Musicians', ' Godina: 2018\r\nŽanr: ECM\r\nPakovanje: CD \r\nOpis\r\nMusic for 18 Musicians je delo koje je komponovao Steve Reich u periodu 1974–1976. Svetska premijera je bila 24. aprila 1976. godine u Nju Jorku a album je objavljen za ECM New Series. \r\nTracklist\r\nCD:\r\nPulse - Sections I-X - Pulse', 8, '1990.00', '1574272324_8793.jpg'),
 (36, 4, 'Rod Stewart - You\'re In My Heart: Rod Stewart with the Royal Philharmonic Orchestra', ' Dostupno od: 22.11.2019.\r\nŽanr: Rock\r\nPakovanje: 2LP \r\nTracklist\r\n\r\nLP. 1-2\r\n\r\nMaggie May\r\nReason To Believe\r\nHandbags & Gladrags\r\nSailing\r\nTonight’s The Night (Gonna Be Alright)\r\nThe Killing Of Georgie (Part I and II)\r\nI Don’t Want To Talk About It\r\nThe First Cut Is The Deepest\r\nYou’re In My Heart (The Final Acclaim)\r\nI Was Only Joking\r\nIt Takes Two (with Robbie Williams)\r\nStay With Me (with Faces)\r\nYoung Turks\r\nWhat Am I Gonna Do (I’m So In Love With You)\r\nEvery Beat Of My Heart\r\nForever Young\r\nDowntown Train\r\nRhythm Of My Heart\r\nHave I Told You Lately\r\nTom Traubert’s Blues (Waltzing Matilda)\r\nIf We Fall In Love Tonight\r\nStop Loving Her Today', 2, '2799.00', '1574272455_3386.jpg'),
 (37, 4, 'Radiohead - OK Computer OKNOTOK 1997 2017', ' Godina: 2018\r\nŽanr: Rock\r\nPakovanje: 2CD \r\nOpis\r\n\r\nOK Computer treći je studijski album britanskog alternativnog rock sastava Radiohead. U Velikoj Britaniji 16. juna 1997. objavio ga je Parlophone, a u SAD-u ga je 1. jula 1997. objavio Capitol Records. Ovo remasterovano izdanje albuma objavljeno je 23. juna 2017. godine za XL Recordings.', 9, '2399.00', 'Radiohead-OK-Computer-OK_1544193130.jpg'),
-(38, 4, 'Gary Moore - Still Got The Blues', ' Godina: 2019\r\nŽanr: Rock\r\nPakovanje: LP \r\nTracklist\r\n\r\nLP: 1\r\n\r\n    Moving On\r\n    Oh Pretty Woman\r\n    Walking by Myself\r\n    Still Got the Blues\r\n    Texas Strut\r\n    Too Tired\r\n    King of the Blues\r\n    As the Years Go Passing By\r\n    Midnight Blue', 5, '3499.00', '1574272786_9017.jpg');
+(38, 4, 'Gary Moore - Still Got The Blues', 'Godina: 2019\r\nŽanr: Rock\r\nPakovanje: LP \r\n\r\nTracklist\r\nLP: 1\r\n    Moving On\r\n    Oh Pretty Woman\r\n    Walking by Myself\r\n    Still Got the Blues\r\n    Texas Strut\r\n    Too Tired\r\n    King of the Blues\r\n    As the Years Go Passing By\r\n    Midnight Blue', 5, '3499.00', '1574272786_9017.jpg');
 
 -- --------------------------------------------------------
 
@@ -314,7 +314,10 @@ INSERT INTO `racun` (`ID`, `Kupac_naziv`, `Datum`, `Ukupna_cena`) VALUES
 (115, 'azerty123', '2019-11-20', '316430.00'),
 (116, 'azerty123', '2019-11-20', '316430.00'),
 (117, 'azerty123', '2019-11-20', '316430.00'),
-(118, 'azerty123', '2019-11-20', '49560.00');
+(118, 'azerty123', '2019-11-20', '49560.00'),
+(119, 'ana', '2019-11-20', '88670.00'),
+(123, 'azerty123', '2019-11-21', '63321.00'),
+(124, 'azerty123', '2019-11-21', '95113.00');
 
 -- --------------------------------------------------------
 
@@ -327,7 +330,7 @@ CREATE TABLE `stavke_racuna` (
   `Racun_id` int(11) NOT NULL,
   `Proizvod_id` int(11) NOT NULL,
   `Proizvod_naziv` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Prozivod_cena` decimal(9,2) NOT NULL,
+  `Proizvod_cena` decimal(9,2) NOT NULL,
   `Kolicina` int(11) NOT NULL,
   `Ukupna_cena` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -336,7 +339,7 @@ CREATE TABLE `stavke_racuna` (
 -- Dumping data for table `stavke_racuna`
 --
 
-INSERT INTO `stavke_racuna` (`ID`, `Racun_id`, `Proizvod_id`, `Proizvod_naziv`, `Prozivod_cena`, `Kolicina`, `Ukupna_cena`) VALUES
+INSERT INTO `stavke_racuna` (`ID`, `Racun_id`, `Proizvod_id`, `Proizvod_naziv`, `Proizvod_cena`, `Kolicina`, `Ukupna_cena`) VALUES
 (1, 4, 8, 'LAG Arkane 100 GRS električna gitara', '32470.00', 4, 129880),
 (2, 4, 2, 'Framus HOLLYWOOD SC V51 (FR05131) električna gitara', '24310.00', 3, 72930),
 (3, 6, 8, 'LAG Arkane 100 GRS električna gitara', '32470.00', 4, 129880),
@@ -387,7 +390,20 @@ INSERT INTO `stavke_racuna` (`ID`, `Racun_id`, `Proizvod_id`, `Proizvod_naziv`, 
 (70, 117, 7, 'Ibanez PF 15 ECE BK Akustična ozvučena gitara', '29760.00', 6, 178560),
 (71, 117, 2, 'Framus HOLLYWOOD SC V51 (FR05131) električna gitara', '24310.00', 3, 72930),
 (72, 118, 1, 'Boss-KTN-50-2 pojacalo', '19800.00', 1, 19800),
-(73, 118, 7, 'Ibanez PF 15 ECE BK Akustična ozvučena gitara', '29760.00', 1, 29760);
+(73, 118, 7, 'Ibanez PF 15 ECE BK Akustična ozvučena gitara', '29760.00', 1, 29760),
+(74, 119, 13, 'Violina Valencia V160 1/2', '12500.00', 2, 25000),
+(75, 119, 9, 'Slušalice AKG K 141 MK II', '10111.00', 1, 10111),
+(76, 119, 24, 'Mikrofon SHURE Beta57A', '17853.00', 3, 53559),
+(87, 123, 22, 'Žice za akustičnu gitaru Martin Darco D-5000', '604.00', 1, 604),
+(88, 123, 16, 'Trzalice Jim Dunlop Ultex', '90.00', 107, 9630),
+(89, 123, 31, 'The Doors - L.A.WOMAN', '3513.00', 2, 7026),
+(90, 123, 9, 'Slušalice AKG K 141 MK II', '10111.00', 1, 10111),
+(91, 123, 7, 'Ibanez PF 15 ECE BK Akustična ozvučena gitara', '29760.00', 1, 29760),
+(92, 123, 30, 't-shirt metal mens AC-DC - FOR THOSE ABOUT TO ROCK - AMPLIFIED', '6190.00', 1, 6190),
+(93, 124, 14, 'Trzalice Jim Dunlop Jazz XL', '120.00', 55, 6600),
+(94, 124, 10, 'Slušalice AKG K 240 MK II', '20060.00', 1, 20060),
+(95, 124, 31, 'The Doors - L.A.WOMAN', '3513.00', 1, 3513),
+(96, 124, 8, 'LAG Arkane 100 GRS električna gitara', '32470.00', 2, 64940);
 
 --
 -- Indexes for dumped tables
@@ -475,13 +491,13 @@ ALTER TABLE `proizvod`
 -- AUTO_INCREMENT for table `racun`
 --
 ALTER TABLE `racun`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
 
 --
 -- AUTO_INCREMENT for table `stavke_racuna`
 --
 ALTER TABLE `stavke_racuna`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
 
 --
 -- Constraints for dumped tables
