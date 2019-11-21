@@ -1,8 +1,8 @@
 <?php
 include "header.php";
 
-if (!isset( $_SESSION['login_admin'] ) ) { 
-    header("location: loginformaadmin.php");
+if (!isset( $_SESSION['login_user'] ) ) { 
+    header("location: loginforma.php");
 }?>
 <div class="main">
   <div class="container">
@@ -11,7 +11,7 @@ if (!isset( $_SESSION['login_admin'] ) ) {
     mysqli_set_charset( $mysqli, 'utf8');
     ?>
     
-    <a class="btn btn-primary" href="adminracun.php" role="button">Назад</a>
+    <a class="btn btn-primary" href="profilistorija.php" role="button">Назад</a>
 
     <table class="table table-striped table-bordered table-hover table-sm" id="tabela">
       <thead class="thead-dark">

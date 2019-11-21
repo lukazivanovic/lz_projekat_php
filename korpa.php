@@ -28,7 +28,7 @@ include "header.php";
           echo "<td class='font-weight-bold'>".number_format($predmetUKorpi[3],2)."</td>";
           echo "<td class='font-weight-bold'>".$predmetUKorpi[4]."</td>";
           echo "<td class='font-weight-bold'>".number_format($predmetUKorpi[5],2)."</td>";
-          echo "<td><a class='btn btn-primary' href='ses_korpa_brisanje.php?id=".$key."' role='button'>уклони из корпе</a></td>";
+          echo "<td><a class='btn btn-danger' href='ses_korpa_brisanje.php?id=".$key."' role='button'><i class='fa fa-trash-alt'></i></a></td>";
           $ukupnaCena += $predmetUKorpi[5];
           echo "</tr>";
         }
@@ -38,17 +38,25 @@ include "header.php";
         //header("Location: index.php");
         $conn = mysqli_connect("localhost", "root", "", "lz_php_projekat");
         mysqli_set_charset($conn, 'utf8');
+        mysqli_autocommit($conn,FALSE);
         $sql = "insert into racun(Kupac_naziv, Datum, Ukupna_cena) values('".$_SESSION['login_user']."', '".date("Y-m-d")."', '".$ukupnaCena."')";
         $result = mysqli_query($conn, $sql);
+        if(!$result){
+          echo mysqli_error($conn); //prikazivanje greske u upitu ako je ima
+          exit();
+        };
         $racun_id =  $conn->insert_id;
 
         foreach($_SESSION['korpa'] as $key=>$predmetUKorpi) {
-          $conn1 = mysqli_connect("localhost", "root", "", "lz_php_projekat");
-          mysqli_set_charset($conn1, 'utf8');
-          $sql1 = "insert into stavke_racuna(Racun_id, Proizvod_id, Proizvod_naziv, Prozivod_cena, Kolicina, Ukupna_cena) values('".$racun_id."', '".$predmetUKorpi[0]."', '".$predmetUKorpi[1]."', '".$predmetUKorpi[3]."', '".$predmetUKorpi[4]."', '".$predmetUKorpi[5]."')";
-          $result = mysqli_query($conn1, $sql1);
+          $sql1 = "insert into stavke_racuna(Racun_id, Proizvod_id, Proizvod_naziv, Proizvod_cena, Kolicina, Ukupna_cena) values('".$racun_id."', '".$predmetUKorpi[0]."', '".$predmetUKorpi[1]."', '".$predmetUKorpi[3]."', '".$predmetUKorpi[4]."', '".$predmetUKorpi[5]."')";
+          $result1 = mysqli_query($conn, $sql1);
+          if(!$result1){
+            echo mysqli_error($conn); //prikazivanje greske u upitu ako je ima
+            exit();
+          };
         }        
         unset($_SESSION['korpa']);
+        mysqli_commit($conn);
         ?>  <script> location.replace("index.php"); </script>
       <?php } ?>
     </tbody>

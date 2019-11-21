@@ -8,42 +8,15 @@ if (!isset( $_SESSION['login_user'] ) ) {
 <div class="main">
   <div class="container">
     <?php
-
-$connection = mysqli_connect("localhost", "root", "");
-// Selecting Database
-$db = mysqli_select_db($connection, "lz_php_projekat");
-//session_start();// Starting Session
-// Storing Session
-$user_check=$_SESSION['login_user'];
-// SQL Query To Fetch Complete Information Of User
-$ses_sql=mysqli_query($connection, "select * from kupac where Korisnicko_ime='$user_check'");
-$row = mysqli_fetch_assoc($ses_sql);
-/*$login_session_id =$row['ID'];
-$login_session =$row['Korisnicko_ime'];
-$login_session_lozinka =$row['Lozinka'];
-$login_session_ime =$row['Ime'];
-$login_session_prezime =$row['Prezime'];
-$login_session_telefon =$row['Telefon'];
-$login_session_email =$row['Email'];
-$login_session_grad =$row['Grad'];
-$login_session_pb =$row['Post_broj'];
-$login_session_adresa =$row['Adresa'];*/
-
-    /*
-    $mysqli = mysqli_connect("localhost", "root", "", "lz_php_projekat");
-    mysqli_set_charset( $mysqli, 'utf8');
-    
-    if (isset($_GET['id'])) {
-      $id = $_GET['id'];
-      $sql = "select * from kupac where ID=".$id;
-      $result = mysqli_query($mysqli, $sql);
-      if (mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_assoc($result);
-      }else {
-        $errorMsg = 'Could not Find Any Record';
-      }
-    }
-    */
+    $connection = mysqli_connect("localhost", "root", "");
+    // Selecting Database
+    $db = mysqli_select_db($connection, "lz_php_projekat");
+    //session_start();// Starting Session
+    // Storing Session
+    $user_check=$_SESSION['login_user'];
+    // SQL Query To Fetch Complete Information Of User
+    $ses_sql=mysqli_query($connection, "select * from kupac where Korisnicko_ime='$user_check'");
+    $row = mysqli_fetch_assoc($ses_sql);
 
     if(isset($_POST['Submit'])){
       $kor_ime = $_POST['kor_ime'];

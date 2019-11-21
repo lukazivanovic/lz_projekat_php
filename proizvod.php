@@ -34,7 +34,7 @@ $rowKat = $resultKat->fetch_array();
           <?php if(isset($_SESSION['login_user'])){ ?>
           <div class="form-group">
 						<label for="prokolicina">количина</label>
-						<input type="number" class="form-control-sm" name="prokolicina" value="" required>
+						<input type="number" class="form-control-sm" name="prokolicina" value="1" required>
           </div>
           <div class="form-group">
 						<button type="submit" name="Submit" class="btn btn-primary waves">ДОДАЈ У КОРПУ</button>
