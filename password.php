@@ -49,19 +49,19 @@ if(isset($_POST['Submit'])){
 				<form class="" action="" method="post" enctype="multipart/form-data">
 					<div class="form-group">
 						<label for="name">корисничко име</label>
-						<input type="text" class="form-control" name="kor_ime" placeholder="корисничко име" value="">
+						<input type="text" class="form-control" name="kor_ime" placeholder="корисничко име" value="" required>
 					</div>
 					<div class="form-group">
 						<label for="name">имејл</label>
-						<input type="text" class="form-control" name="email" placeholder="имејл" value="">
+						<input type="text" class="form-control" name="email" placeholder="имејл" value="" required>
                     </div>
                     <div class="form-group">
 						<label for="name">нова лозинка</label>
-						<input type="password" class="form-control" name="lozinka2" placeholder="лозинка" value="">
+						<input type="password" class="form-control" name="lozinka2" placeholder="лозинка" value="" required>
                     </div>
                     <div class="form-group">
 						<label for="name">иста нова лозинка</label>
-						<input type="password" class="form-control" name="lozinka3" placeholder="лозинка" value="">
+						<input type="password" class="form-control" name="lozinka3" placeholder="лозинка" value="" required>
 					</div>
                     <div class="form-group">
 						<button type="submit" name="Submit" class="btn btn-primary waves">измени лозинку</button>

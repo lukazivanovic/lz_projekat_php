@@ -46,15 +46,15 @@ if(isset($_POST['Submit'])){
                 <form class="" action="" method="post" enctype="multipart/form-data">
                     <div class="form-group">
 						<label for="name">стара лозинка</label>
-						<input type="password" class="form-control" name="lozinka1" placeholder="лозинка" value="">
+						<input type="password" class="form-control" name="lozinka1" placeholder="лозинка" value="" required>
                     </div>
                     <div class="form-group">
 						<label for="name">нова лозинка</label>
-						<input type="password" class="form-control" name="lozinka2" placeholder="лозинка" value="">
+						<input type="password" class="form-control" name="lozinka2" placeholder="лозинка" value="" required>
                     </div>
                     <div class="form-group">
 						<label for="name">иста нова лозинка</label>
-						<input type="password" class="form-control" name="lozinka3" placeholder="лозинка" value="">
+						<input type="password" class="form-control" name="lozinka3" placeholder="лозинка" value="" required>
 					</div>
                     <div class="form-group">
 						<button type="submit" name="Submit" class="btn btn-primary waves">измени лозинку</button>

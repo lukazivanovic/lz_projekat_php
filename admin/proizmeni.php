@@ -86,7 +86,7 @@ if (!isset( $_SESSION['login_admin'] ) ) {
                     </div>
                     <div class="form-group">
                         <label for="name">назив</label>
-                        <input type="text" class="form-control" name="name" placeholder="назив" value="<?php echo $row['Naziv']; ?>">
+                        <input type="text" class="form-control" name="name" placeholder="назив" value="<?php echo $row['Naziv']; ?>" required>
                     </div>
                         <div class="form-group">
                         <label for="name">опис</label>
@@ -94,17 +94,17 @@ if (!isset( $_SESSION['login_admin'] ) ) {
                     </div>
                     <div class="form-group">
                         <label for="name">количина</label>
-                        <input type="text" class="form-control" name="kolicina" placeholder="количина" value="<?php echo $row['Kolicina']; ?>">
+                        <input type="number" class="form-control" name="kolicina" placeholder="количина" value="<?php echo $row['Kolicina']; ?>">
                     </div>
                     <div class="form-group">
                         <label for="name">цена</label>
-                        <input type="text" class="form-control" name="cena" placeholder="цена" value="<?php echo $row['Cena']; ?>">
+                        <input type="number" class="form-control" name="cena" placeholder="цена" value="<?php echo $row['Cena']; ?>">
                     </div>
                     <div class="form-group">
                         <label for="image">изабери слику</label>
                         <div>
                             <img src="<?php echo $upload_dir.$row['Slika'] ?>" width="100">
-                            <input type="file" class="form-control" name="image" value="">
+                            <input type="file" class="form-control" name="image" value="" required>
                         </div>
                     </div>
                     <div class="form-group">

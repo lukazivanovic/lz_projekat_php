@@ -41,11 +41,11 @@ $row = mysqli_fetch_assoc($ses_sql);
         <form class="" action="" method="post" enctype="multipart/form-data">
           <div class="form-group">
             <label for="name">Корисничко име</label>
-            <input type="text" class="form-control" name="kor_ime" placeholder="Корисничко име" value="<?php echo $row['Korisnicko_ime']; ?>">
+            <input type="text" class="form-control" name="kor_ime" placeholder="Корисничко име" value="<?php echo $row['Korisnicko_ime']; ?>" required>
           </div>
           <div class="form-group">
             <label for="name">Имејл</label>
-            <input type="text" class="form-control" name="email" placeholder="Имејл" value="<?php echo $row['Email']; ?>">
+            <input type="text" class="form-control" name="email" placeholder="Имејл" value="<?php echo $row['Email']; ?>" required>
           </div>
           <div class="form-group">
             <button type="submit" name="Submit" class="btn btn-primary waves">измени податке</button>

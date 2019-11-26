@@ -72,7 +72,7 @@ if (isset($_POST['Submit'])) {
 					</div>
 					<div class="form-group">
 						<label for="name">назив</label>
-						<input type="text" class="form-control" name="name" placeholder="назив" value="">
+						<input type="text" class="form-control" name="name" placeholder="назив" value="" required>
 					</div>
 					<div class="form-group">
 						<label for="name">опис</label>
@@ -80,15 +80,15 @@ if (isset($_POST['Submit'])) {
 					</div>
 					<div class="form-group">
 						<label for="name">количина</label>
-						<input type="text" class="form-control" name="kolicina" placeholder="количина" value="">
+						<input type="number" class="form-control" name="kolicina" placeholder="количина" value="">
 					</div>
 					<div class="form-group">
 						<label for="name">цена</label>
-						<input type="text" class="form-control" name="cena" placeholder="цена" value="">
+						<input type="number" class="form-control" name="cena" placeholder="цена" value="">
 					</div>
 					<div class="form-group">
 						<label for="image">изабери слику</label>
-						<input type="file" class="form-control" name="image" value="">
+						<input type="file" class="form-control" name="image" value="" required>
 					</div>
 					<div class="form-group">
 						<button type="submit" name="Submit" class="btn btn-primary waves">направи производ</button>

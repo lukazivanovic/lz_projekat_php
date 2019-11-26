@@ -14,9 +14,9 @@ header("location: profil.php");
                 <h2>Пријава</h2>
                 <form action="" method="post">
                     <label>корисничко име :</label>
-                    <input id="name" name="username" placeholder="корисничко име" type="text">
+                    <input id="name" name="username" placeholder="корисничко име" type="text" required>
                     <label>Лозинка :</label>
-                    <input id="password" name="password" placeholder="**********" type="password">
+                    <input id="password" name="password" placeholder="**********" type="password" required>
                     <input name="submit" type="submit" value=" ПРИЈАВИ СЕ ">
                     <span><?php echo $error; ?></span><br><br>
                     <a href="registerforma.php">регистрација новог корисника</a><br><br>

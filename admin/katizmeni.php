@@ -65,13 +65,13 @@ if (!isset( $_SESSION['login_admin'] ) ) {
         <form class="" action="" method="post" enctype="multipart/form-data">
           <div class="form-group">
             <label for="name">назив</label>
-            <input type="text" class="form-control" name="name" placeholder="назив" value="<?php echo $row['Naziv']; ?>">
+            <input type="text" class="form-control" name="name" placeholder="назив" value="<?php echo $row['Naziv']; ?>" required>
           </div>
           <div class="form-group">
             <label for="image">изабери слику</label>
             <div>
               <img src="<?php echo $upload_dir.$row['Slika'] ?>" width="100">
-              <input type="file" class="form-control" name="image" value="">
+              <input type="file" class="form-control" name="image" value="" required>
             </div>
           </div>
           <div class="form-group">

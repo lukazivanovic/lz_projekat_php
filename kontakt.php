@@ -23,27 +23,27 @@ include "header.php";
       <form name="forma" id="forma">
         <div class="form-group">
           <label for="firstname">Име и презиме:</label>
-          <input type="text" class="form-control" id="firstname" name="firstname" placeholder="твоје име и презиме...">
+          <input type="text" class="form-control" id="firstname" name="firstname" placeholder="твоје име и презиме..." required>
           <p id="rezIme"></p>
         </div>
         <div class="form-group">
           <label for="address">Имејл:</label>
-          <input type="text" class="form-control" id="email" placeholder="твој имејл...">
+          <input type="text" class="form-control" id="email" placeholder="твој имејл..." required>
           <p id="rezEmail"></p>
         </div>
         <div class="form-group">
           <label for="address">Веб адреса:</label>
-          <input type="text" class="form-control" id="address" placeholder="твоја веб адреса...">
+          <input type="text" class="form-control" id="address" placeholder="твоја веб адреса..." required>
           <p id="rezAdresa"></p>
         </div>
         <div class="form-group">
           <label for="telephone1">Телефон:</label>
-          <input type="text" class="form-control" id="telephone1" placeholder="0xx/xxx-xxxx">
+          <input type="text" class="form-control" id="telephone1" placeholder="0xx/xxx-xxxx" required>
           <p id="rezTelefon1"></p>
         </div>
         <div class="form-group">
           <label for="inputTekst">Порука:</label>
-          <textarea rows="12" class="form-control" id="inputTekst"></textarea>
+          <textarea rows="12" class="form-control" id="inputTekst" required></textarea>
           <p id="rezPoruka"></p>
         </div>
         <button type="submit" class="btn btn-danger btn-block" onclick="proveri()">Пошаљи</button>

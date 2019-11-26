@@ -14,9 +14,9 @@ header("location: index.php");
                 <h2>ПРИЈАВА админ</h2>
                 <form action="" method="post">
                     <label>корисничко име :</label>
-                    <input id="name" name="username" placeholder="корисничко име" type="text">
+                    <input id="name" name="username" placeholder="корисничко име" type="text" required>
                     <label>лозинка :</label>
-                    <input id="password" name="password" placeholder="*****" type="password">
+                    <input id="password" name="password" placeholder="*****" type="password" required>
                     <input name="submit" type="submit" value=" ПРИЈАВИ СЕ ">
                     <span><?php echo $error; ?></span><br><br>
                     <a href="passwordadmin.php">заборављена лозинка</a>

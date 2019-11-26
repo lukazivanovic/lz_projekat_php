@@ -54,11 +54,11 @@ if (isset($_POST['Submit'])) {
 				<form class="" action="" method="post" enctype="multipart/form-data">
 					<div class="form-group">
 						<label for="name">назив</label>
-						<input type="text" class="form-control" name="name" placeholder="назив" value="">
+						<input type="text" class="form-control" name="name" placeholder="назив" value="" required>
 					</div>
 					<div class="form-group">
 						<label for="image">изабери слику</label>
-						<input type="file" class="form-control" name="image" value="">
+						<input type="file" class="form-control" name="image" value="" required>
 					</div>
 					<div class="form-group">
 						<button type="submit" name="Submit" class="btn btn-primary waves">направи категорију</button>

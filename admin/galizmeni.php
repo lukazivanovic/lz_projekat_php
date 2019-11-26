@@ -66,7 +66,7 @@ if (!isset( $_SESSION['login_admin'] ) ) {
         <form class="" action="" method="post" enctype="multipart/form-data">
           <div class="form-group">
             <label for="name">наслов</label>
-            <input type="text" class="form-control" name="name" placeholder="наслов" value="<?php echo $row['Naslov']; ?>">
+            <input type="text" class="form-control" name="name" placeholder="наслов" value="<?php echo $row['Naslov']; ?>" required>
           </div>
           <div class="form-group">
             <label for="name">опис</label>
@@ -76,7 +76,7 @@ if (!isset( $_SESSION['login_admin'] ) ) {
             <label for="image">изабери слику</label>
             <div>
               <img src="<?php echo $upload_dir.$row['Slika'] ?>" width="100">
-              <input type="file" class="form-control" name="image" value="">
+              <input type="file" class="form-control" name="image" value="" required>
             </div>
           </div>
           <div class="form-group">

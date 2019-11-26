@@ -43,15 +43,15 @@ if (isset($_POST['Submit'])) {
                 <form class="" action="" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="name">корисничко име</label>
-                        <input type="text" class="form-control" name="kor_ime" placeholder="корисничко име" value="">
+                        <input type="text" class="form-control" name="kor_ime" placeholder="корисничко име" value="" required>
                     </div>
                     <div class="form-group">
                         <label for="name">лозинка</label>
-                        <input type="password" class="form-control" name="lozinka" placeholder="*******" value="">
+                        <input type="password" class="form-control" name="lozinka" placeholder="*******" value="" required>
                     </div>
                     <div class="form-group">
                         <label for="name">потврда лозинке</label>
-                        <input type="password" class="form-control" name="lozinka2" placeholder="*******" value="">
+                        <input type="password" class="form-control" name="lozinka2" placeholder="*******" value="" required>
                     </div>
                     <div class="form-group">
                         <label for="name">име</label>
@@ -67,7 +67,7 @@ if (isset($_POST['Submit'])) {
                     </div>
                     <div class="form-group">
                         <label for="name">имејл</label>
-                        <input type="text" class="form-control" name="email" placeholder="имејл" value="">
+                        <input type="text" class="form-control" name="email" placeholder="имејл" value="" required>
                     </div>
                     <div class="form-group">
                         <label for="name">град</label>

@@ -54,7 +54,7 @@ if (isset($_POST['Submit'])) {
 				<form class="" action="" method="post" enctype="multipart/form-data">
 					<div class="form-group">
 						<label for="name">наслов</label>
-						<input type="text" class="form-control" name="name" placeholder="наслов" value="">
+						<input type="text" class="form-control" name="name" placeholder="наслов" value="" required>
 					</div>
 					<div class="form-group">
 						<label for="name">опис</label>
@@ -62,7 +62,7 @@ if (isset($_POST['Submit'])) {
 					</div>
 					<div class="form-group">
 						<label for="image">изабери слику</label>
-						<input type="file" class="form-control" name="image" value="">
+						<input type="file" class="form-control" name="image" value="" required>
 					</div>
 					<div class="form-group">
 						<label for="name">alt</label>
