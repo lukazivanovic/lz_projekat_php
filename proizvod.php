@@ -24,10 +24,10 @@ $rowKat = $resultKat->fetch_array();
 <div class="container galerija">
   <div class="proizvodSlika">
     <div class="row">
-      <div class="col-sm-12 col-md-6">
-        <img class='img-thumbnail' src='admin/img/proizvodi/<?php echo $row['Slika']; ?>' alt="...">
+      <div class="col-sm-12 col-md-8 col-lg-6">
+        <img id="myImg" class='img-thumbnail' src='admin/img/proizvodi/<?php echo $row['Slika']; ?>' alt="<?php echo $row['Naziv']; ?>">
       </div>
-      <div class="col-sm-12 col-md-6">
+      <div class="col-sm-12 col-md-4 col-lg-6">
         <form class="" action="ses_korpa.php?id=<?php echo $row['ID'] ?>" method="post" enctype="multipart/form-data">
           <?php if($row['Kolicina']>0){ ?>  
           <p>Цена: <?php echo number_format($row['Cena'],2); ?> динара</p>
@@ -50,6 +50,19 @@ $rowKat = $resultKat->fetch_array();
   <p class="text-justify" style="white-space: pre-line;"><?php echo $row['Opis']; ?></p>
   </div>
 </div>
+
+<!--<img id="myImg" src="img_snow.jpg" alt="Snow" style="width:100%;max-width:300px">-->
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- The Close Button -->
+  <span class="close">&times;</span>
+  <!-- Modal Content (The Image) -->
+  <img class="modal-content" id="img01">
+  <!-- Modal Caption (Image Text) -->
+  <div id="caption"></div>
+</div>
+
+<script src="js/proizvod.js"></script>
 
 <?php
 $result->close(); 
