@@ -36,22 +36,23 @@ session_start();
                 <li class="nav-item">
                     <a class="nav-link" href="kontakt.php"><i class="far fa-id-card"></i> Контакт</a>
                 </li>
-                
+            </ul>
+            <ul class="navbar-nav">
                 <?php if(isset($_SESSION["login_user"])){ ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="korpa.php"><i class="fas fa-shopping-cart"></i> Корпа</a>
+                        <a class="nav-link text-primary font-weight-bold" href="korpa.php"><i class="fas fa-shopping-cart"></i> Корпа</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link navbar-text text-success" href="profil.php"><i class="fas fa-user-circle"></i>
+                        <a class="nav-link text-success font-weight-bold" href="profil.php"><i class="fas fa-user-circle"></i>
                             <?php echo $_SESSION["login_user"]; ?>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-danger" href="logout.php"><i class="fas fa-sign-out-alt"></i> ОДЈАВА</a>
+                        <a class="nav-link text-danger font-weight-bold" href="logout.php"><i class="fas fa-sign-out-alt"></i> ОДЈАВА</a>
                     </li>
                 <?php } else { ?>
                     <li class="nav-item">
-                        <a class="nav-link text-warning" href="loginforma.php"><i class="fas fa-sign-in-alt"></i> ПРИЈАВА</a>
+                        <a class="nav-link text-warning font-weight-bold" href="loginforma.php"><i class="fas fa-sign-in-alt"></i> ПРИЈАВА</a>
                     </li> 
                 <?php } ?>
             </ul>
