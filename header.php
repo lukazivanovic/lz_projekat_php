@@ -31,6 +31,9 @@ session_start();
                     <a class="nav-link" href="prodavnica.php"><i class="fas fa-store"></i> Продавница</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="pretraga.php"><i class="fas fa-search"></i> Претрага</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="kontakt.php"><i class="far fa-id-card"></i> Контакт</a>
                 </li>
                 

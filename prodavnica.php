@@ -3,13 +3,6 @@ include "header.php";
 ?>
 
 <div class=container-fluid id="prodavnica">
-    <div class="d-flex justify-content-center">
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Претражи" aria-label="Search">
-            <button class="btn btn-primary my-2 my-sm-2" type="submit">Претражи</button>
-        </form>
-    </div>
-
     <div class="row d-flex justify-content-center">
         <?php 
         $mysqli = new mysqli("localhost", "root", "", "lz_php_projekat");
