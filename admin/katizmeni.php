@@ -1,18 +1,19 @@
 <?php
 include "header.php";
-
+//provera administratora
 if (!isset( $_SESSION['login_admin'] ) ) { 
     header("location: loginformaadmin.php");
 }?>
 <div class="main">
   <div class="container">
     <?php
+    //pocetak konekcije
     $mysqli = mysqli_connect("localhost", "root", "", "lz_php_projekat");
     mysqli_set_charset( $mysqli, 'utf8');
     $upload_dir = 'img/kategorije/';
-
     if (isset($_GET['id'])) {
       $id = $_GET['id'];
+      //SQL upit za izbor kategorije
       $sql = "select * from kategorija where ID=".$id;
       $result = mysqli_query($mysqli, $sql);
       if (mysqli_num_rows($result) > 0) {
@@ -21,13 +22,11 @@ if (!isset( $_SESSION['login_admin'] ) ) {
         $errorMsg = 'Could not Find Any Record';
       }
     }
-
     if(isset($_POST['Submit'])){
       $name = $_POST['name'];
       $imgName = $_FILES['image']['name'];
       $imgTmp = $_FILES['image']['tmp_name'];
       $imgSize = $_FILES['image']['size'];
-
       if($imgName){
         $imgExt = strtolower(pathinfo($imgName, PATHINFO_EXTENSION));
         $allowExt  = array('jpeg', 'jpg', 'png', 'gif');
@@ -46,8 +45,8 @@ if (!isset( $_SESSION['login_admin'] ) ) {
       }else{
         $pic = $row['Slika'];
       }
-
       if(!isset($errorMsg)){
+        //SQL upit za izmenu kategorije
         $sql = "update kategorija set Naziv = '".$name."', Slika = '".$pic."' where ID=".$id;
         $result = mysqli_query($mysqli, $sql);
         if($result){
@@ -59,6 +58,7 @@ if (!isset( $_SESSION['login_admin'] ) ) {
       }
     }
     ?>
+    <!--forma za izmenu podataka o kategoriji-->
     <div class="row justify-content-center">
       <div class="col-md-6">
         <a class="btn btn-primary" href="adminkategorija.php" role="button">Назад</a>

@@ -1,13 +1,13 @@
 <?php
 include "header.php";
-include "loginadmin.php"; // Includes Login Script
-
+include "loginadmin.php";
+//provera administratora
 if(isset($_SESSION['login_admin'])){
 header("location: index.php");
 }
 ?>
-
 <div id="main" class="container">
+    <!--forma za prijavljivanje administratora-->
     <div class="row justify-content-center">
 	    <div class="col-md-6">
             <div id="login">
@@ -25,7 +25,6 @@ header("location: index.php");
         </div>
     </div>
 </div>
-
 <?php
 include "footer.php";
 ?>

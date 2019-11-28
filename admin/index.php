@@ -1,10 +1,11 @@
 <?php
 include "header.php";
-
+//provera administratora
 if (!isset($_SESSION['login_admin'])){ 
     header("location: loginformaadmin.php");
 }?>
 <div class="main">
+    <!--sadrzaj pocetne strane-->
     <div class="container row justify-content-center">
         <div class="col-md-6">
             <h1>АДМИН</h1>

@@ -1,26 +1,27 @@
 <?php
 include "header.php";
-
+//provera administratora
 if (!isset( $_SESSION['login_admin'] ) ) { 
     header("location: loginformaadmin.php");
 }?>
-
 <div class=container id="prodavnica">
   <div class="row d-flex justify-content-center">
-    <?php 
+    <?php
+    //pocetak konekcije 
     $mysqli = new mysqli("localhost", "root", "", "lz_php_projekat");
     mysqli_set_charset( $mysqli, 'utf8');
     $query = "SELECT * FROM galerija";
     $result = $mysqli->query($query);
-
     if(isset($_GET['delete'])){
       $id = $_GET['delete'];
+      //SQL upit za izbor galerije
       $sql = "select * from galerija where ID = ".$id;
       $result = mysqli_query($mysqli, $sql);
       if(mysqli_num_rows($result) > 0){
         $row = mysqli_fetch_assoc($result);
         $image = $row['image'];
         unlink($upload_dir.$image);
+        //SQL upit za brisanje slike iz galerije
         $sql = "delete from galerija where ID=".$id;
         if(mysqli_query($mysqli, $sql)){
           header('location:admingalerija.php');
@@ -30,6 +31,7 @@ if (!isset( $_SESSION['login_admin'] ) ) {
     ?>
     <a class="btn btn-primary mr-md-3" href="./" role="button">Назад</a>
     <a class="btn btn-primary" href="galdodaj.php" role="button">Додај...</a>
+    <!--forma za prikaz svih slika u galeriji-->
     <table class="table table-striped table-bordered table-hover table-sm" id="tabela">
       <thead class="thead-dark">
         <tr>
@@ -61,12 +63,12 @@ if (!isset( $_SESSION['login_admin'] ) ) {
       </tbody>
     </table>
     <?php
+    //zatvaranje konekcije
     $result->close();
     $mysqli->close();
     ?>
   </div>
 </div>
-
 <?php
 include "footer.php";
 ?>

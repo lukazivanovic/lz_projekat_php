@@ -1,27 +1,25 @@
 <?php 
-session_start();
+session_start();//pocetak sesije
 ?>
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-
+    <!--bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
+    <!--font awesome-->
     <script src="https://kit.fontawesome.com/9333006fb1.js" crossorigin="anonymous"></script>
-    
+    <!--google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-    
+    <!--dodatni stil-->
     <link rel="stylesheet" href="css/style.css">
-
     <title>АДМИН</title>
   </head>
   <body>
-    
+    <!--glavna navigacija-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="../">
     <img src="img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">

@@ -1,15 +1,13 @@
 <?php
 include "header.php";
-
+//provera administratora
 if (!isset( $_SESSION['login_admin'] ) ) { 
     header("location: loginformaadmin.php");
 }
-
-// Create database connection
+//otvaranje konekcije
 $conn = mysqli_connect("localhost", "root", "", "lz_php_projekat");
 mysqli_set_charset( $conn, 'utf8');
 $upload_dir = 'img/carousel/';
-
 if (isset($_POST['Submit'])) {
 	$name = $_POST['name'];
 	$opis = $_POST['opis'];
@@ -34,6 +32,7 @@ if (isset($_POST['Submit'])) {
 		}
 	}
 	if(!isset($errorMsg)){
+		//SQL upit za dodavanje slike u galeriju
 		$sql = "insert into galerija(Naslov, Opis, Slika, Alt) values('".$name."', '".$opis."', '".$pic."', '".$alt."')";
 		$result = mysqli_query($conn, $sql);
 		if($result){
@@ -45,12 +44,12 @@ if (isset($_POST['Submit'])) {
 	}
 }
 ?>
-
 <div class="main">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-6">
 				<a class="btn btn-primary" href="admingalerija.php" role="button">Назад</a>
+				<!--forma za dodavanje slike u galeriju-->
 				<form class="" action="" method="post" enctype="multipart/form-data">
 					<div class="form-group">
 						<label for="name">наслов</label>
@@ -76,7 +75,6 @@ if (isset($_POST['Submit'])) {
 		</div>
 	</div>
 </div>
-
 <?php
 include "footer.php";
 ?>

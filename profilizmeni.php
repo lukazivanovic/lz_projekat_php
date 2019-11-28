@@ -1,23 +1,21 @@
 <?php
 include "header.php";
-
+//provera korisnika
 if (!isset( $_SESSION['login_user'] ) ) { 
     header("location: index.php");
 }?>
-
 <div class="main">
   <div class="container">
     <?php
+    //otvaranje konekcije
     $connection = mysqli_connect("localhost", "root", "");
-    // Selecting Database
     $db = mysqli_select_db($connection, "lz_php_projekat");
-    //session_start();// Starting Session
-    // Storing Session
+    //cuvanje sesije o korisniku
     $user_check=$_SESSION['login_user'];
-    // SQL Query To Fetch Complete Information Of User
+    //SQL upit za trazenje korisnika
     $ses_sql=mysqli_query($connection, "select * from kupac where Korisnicko_ime='$user_check'");
     $row = mysqli_fetch_assoc($ses_sql);
-
+    //izmena podataka o korisniku
     if(isset($_POST['Submit'])){
       $kor_ime = $_POST['kor_ime'];
       $ime = $_POST['ime'];
@@ -27,7 +25,6 @@ if (!isset( $_SESSION['login_user'] ) ) {
       $grad = $_POST['grad'];
       $post_broj = $_POST['post_broj'];
       $adresa = $_POST['adresa'];
-      
       if(!isset($errorMsg)){
         $sql = "update kupac set Korisnicko_ime = '".$kor_ime."', Ime = '".$ime."', Prezime = '".$prezime."', Telefon = '".$telefon."', Email = '".$email."', Grad = '".$grad."', Post_broj = '".$post_broj."', Adresa = '".$adresa."' where ID=".$row['ID'];
         $result = mysqli_query($connection, $sql);
@@ -43,6 +40,7 @@ if (!isset( $_SESSION['login_user'] ) ) {
     <div class="row justify-content-center">
       <div class="col-md-6">
         <a class="btn btn-primary" href="profil.php" role="button">Назад</a>
+        <!-- forma za izmenu podataka o korisniku-->
         <form class="" action="" method="post" enctype="multipart/form-data">
           <div class="form-group">
             <label for="name">Корисничко име</label>

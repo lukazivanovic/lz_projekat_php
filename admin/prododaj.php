@@ -1,15 +1,14 @@
 <?php
 include "header.php";
-
+//provera administratora
 if (!isset( $_SESSION['login_admin'] ) ) { 
     header("location: loginformaadmin.php");
 }
-
-// Create database connection
+//otvaranje konekcije
 $conn = mysqli_connect("localhost", "root", "", "lz_php_projekat");
 mysqli_set_charset( $conn, 'utf8');
 $upload_dir = 'img/proizvodi/';
-
+//definisanje podataka o proizvodu
 if (isset($_POST['Submit'])) {
 	$kategorija = $_POST['kategorija'];
 	$name = $_POST['name'];
@@ -36,9 +35,9 @@ if (isset($_POST['Submit'])) {
 		}
 	}
 	if(!isset($errorMsg)){
+		//SQL upit za dodavanje proizvoda
 		$sql = "insert into proizvod(Kategorija, Naziv, Opis, Kolicina, Cena, Slika) values('".$kategorija."', '".$name."', '".$opis."', '".$kolicina."', '".$cena."', '".$pic."')";
 		$result = mysqli_query($conn, $sql);
-
 		if($result){
 			$successMsg = 'New record added successfully';
 			header('Location: adminproizvod.php');
@@ -48,12 +47,12 @@ if (isset($_POST['Submit'])) {
 	}		
 }
 ?>
-
 <div class="main">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-6">
 				<a class="btn btn-primary" href="adminproizvod.php" role="button">Назад</a>
+				<!--forma za dodavanje novog proizvoda-->
 				<form class="" action="" method="post" enctype="multipart/form-data">
 					<div class="form-group">
 						<label for="kategorija">Категорија</label>
@@ -98,7 +97,6 @@ if (isset($_POST['Submit'])) {
 		</div>
 	</div>
 </div>
-
 <?php
 include "footer.php";
 ?>

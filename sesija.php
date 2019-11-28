@@ -1,17 +1,16 @@
 <?php
-// Establishing Connection with Server by passing server_name, user_id and password as a parameter
+//otvaranje konekcije
 $connection = mysqli_connect("localhost", "root", "");
-// Selecting Database
 $db = mysqli_select_db($connection, "lz_php_projekat");
-session_start();// Starting Session
-// Storing Session
+session_start();//pocetak sesije
+//cuvanje sesije
 $user_check=$_SESSION['login_user'];
-// SQL Query To Fetch Complete Information Of User
+//SQL upit
 $ses_sql=mysqli_query("select * from kupac where Korisnicko_ime='$user_check'", $connection);
 $row = mysqli_fetch_assoc($ses_sql);
 $login_session =$row['Korisnicko_ime'];
 if(!isset($login_session)){
-    mysqli_close($connection); // Closing Connection
-    header('Location: index.php'); // Redirecting To Home Page
+    mysqli_close($connection); //zatvaranje konekcije
+    header('Location: index.php'); //povratak na pocetnu stranu
 }
 ?>

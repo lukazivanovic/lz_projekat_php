@@ -1,26 +1,22 @@
 <?php
 include "header.php";
-
+//provera korisnika
 if (!isset( $_SESSION['login_user'])) { 
     header("location: index.php");
 }
-
-// Create database connection
+//otvaranje konekcije
 $connection = mysqli_connect("localhost", "root", "");
-// Selecting Database
 $db = mysqli_select_db($connection, "lz_php_projekat");
-//session_start();// Starting Session
-// Storing Session
+//cuvanje sesije o korisniku
 $user_check=$_SESSION['login_user'];
-// SQL Query To Fetch Complete Information Of User
+//SQL upit za nalazenje korisnika
 $ses_sql=mysqli_query($connection, "select * from kupac where Korisnicko_ime='$user_check'");
 $row = mysqli_fetch_assoc($ses_sql);
-
+//funkcije za promenu lozinke
 if(isset($_POST['Submit'])){
     $lozinka1 = $_POST['lozinka1'];
     $lozinka2 = $_POST['lozinka2'];
     $lozinka3 = $_POST['lozinka3'];
-
     if($lozinka1 == $row["Lozinka"]){
         if($lozinka2 == $lozinka3){
             if(!isset($errorMsg)){
@@ -37,10 +33,10 @@ if(isset($_POST['Submit'])){
     }
 }
 ?>
-
 <div class="main">
 	<div class="container">
-		<div class="row justify-content-center">
+        <!--forma za promenu lozinke-->
+        <div class="row justify-content-center">
 			<div class="col-md-6">
 				<a class="btn btn-primary" href="profil.php" role="button">Назад</a>
                 <form class="" action="" method="post" enctype="multipart/form-data">
@@ -64,7 +60,6 @@ if(isset($_POST['Submit'])){
 		</div>
 	</div>
 </div>
-
 <?php
 include "footer.php";
 ?>

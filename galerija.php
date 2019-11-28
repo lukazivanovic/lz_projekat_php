@@ -1,16 +1,16 @@
 <?php
 include "header.php";
-
+//otvaranje konekcije
 $mysqli = new mysqli("localhost", "root", "", "lz_php_projekat");
 mysqli_set_charset( $mysqli, 'utf8');
-
+//SQL upit za galeriju
 function make_query($mysqli)
 {
  $query = "SELECT * FROM galerija ORDER BY ID ASC";
  $result = mysqli_query($mysqli, $query);
  return $result;
 }
-
+//brojanje stavki u galeriji
 function make_slide_indicators($mysqli)
 {
   $output = ''; 
@@ -30,7 +30,7 @@ function make_slide_indicators($mysqli)
   }
   return $output;
 }
-
+//dodavanje slika iz baze u galeriju
 function make_slides($mysqli)
 {
   $output = '';
@@ -59,9 +59,9 @@ function make_slides($mysqli)
   return $output;
 }
 ?>  
-
 <div class="main">
   <div class="container">
+    <!--prikaz galerije-->
     <div class="galerija">
       <div id="dynamic_slide_show" class="carousel slide" data-ride="carousel" data-interval="3000">
         <div class="carousel-inner">
@@ -79,9 +79,7 @@ function make_slides($mysqli)
     </div>
   </div>
 </div>
-
 <?php
-$mysqli->close();
-
+$mysqli->close();//zatvaranje konekcije
 include "footer.php";
 ?>

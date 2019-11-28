@@ -1,32 +1,31 @@
 <?php
-$error=''; // Variable To Store Error Message
+$error='';
 if (isset($_POST['submit'])) {
     if (empty($_POST['username']) || empty($_POST['password'])) {
         $error = "Username or Password is invalid";
     }
     else {
-    // Define $username and $password
+        //definisanje korisnickog imena i lozinke
         $username=$_POST['username'];
         $password=$_POST['password'];
-        // Establishing Connection with Server by passing server_name, user_id and password as a parameter
+        //otvaranje konekcije
         $connection = mysqli_connect("localhost", "root", "");
-        // To protect MySQL injection for Security purpose
         $username = stripslashes($username);
         $password = stripslashes($password);
         $username = mysqli_real_escape_string($connection, $username);
         $password = mysqli_real_escape_string($connection, $password);
-        // Selecting Database
+        //izbor baze
         mysqli_select_db($connection, "lz_php_projekat");
-        // SQL query to fetch information of registerd users and finds user match.
+        //SQL upit za nalazenje korisnika
         $query = mysqli_query($connection, "select * from kupac where Lozinka='$password' AND Korisnicko_ime='$username'");
         $rows = mysqli_num_rows($query);
         if ($rows == 1) {
-            $_SESSION['login_user']=$username; // Initializing Session
-            header("location: profil.php"); // Redirecting To Other Page
+            $_SESSION['login_user']=$username; //uspostavljanje sesije
+            header("location: profil.php"); //povratak na profilnu stanu
         } else {
             $error = "Username or Password is invalid";
         }
-        mysqli_close($connection); // Closing Connection
+        mysqli_close($connection); //zatvaranje konekcije
     }
 }
 ?>

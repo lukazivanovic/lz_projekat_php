@@ -1,18 +1,21 @@
 <?php
 include "header.php";
-
+//provera korisnika
 if (!isset( $_SESSION['login_user'] ) ) { 
     header("location: loginforma.php");
 }?>
 <div class=container id="prodavnica">
   <div class="row d-flex justify-content-center">
     <?php 
+    //otvaranje konekcije
     $mysqli = new mysqli("localhost", "root", "", "lz_php_projekat");
     mysqli_set_charset( $mysqli, 'utf8');
+    //SQL upit za trazenje racuna
     $query = "SELECT * FROM racun WHERE Kupac_naziv = '".$_SESSION["login_user"]."'";
     $result = $mysqli->query($query);
     ?>
     <a class="btn btn-primary mr-md-3" href="profil.php" role="button">Назад</a>
+    <!--tabela za prikaz potvrdjenih racuna po korisniku-->
     <table class="table table-striped table-bordered table-hover table-sm" id="tabela">
       <thead class="thead-dark">
         <tr>
@@ -40,12 +43,12 @@ if (!isset( $_SESSION['login_user'] ) ) {
       </tbody>
     </table>
     <?php
+    //zatvaranje konekcije
     $result->close();
     $mysqli->close();
     ?>
   </div>
 </div>
-
 <?php
 include "footer.php";
 ?>

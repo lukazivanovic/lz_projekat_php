@@ -1,13 +1,13 @@
 <?php
 include "header.php";
-include "login.php"; // Includes Login Script
-
+include "login.php";
+//provera korisnika
 if(isset($_SESSION['login_user'])){
 header("location: profil.php");
 }
 ?>
-
 <div id="main" class="container">
+    <!--forma za prijavu korisnika-->
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div id="login">
@@ -26,7 +26,6 @@ header("location: profil.php");
         </div>
     </div>
 </div>
-
 <?php
 include "footer.php";
 ?>

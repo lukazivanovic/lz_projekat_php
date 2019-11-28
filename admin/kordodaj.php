@@ -1,14 +1,12 @@
 <?php
 include "header.php";
-
+//provera administratora
 if (!isset( $_SESSION['login_admin'])) { 
     header("location: loginformaadmin.php");
 }
-
-// Create database connection
+//pocetak konekcije
 $conn = mysqli_connect("localhost", "root", "", "lz_php_projekat");
 mysqli_set_charset( $conn, 'utf8');
-
 if (isset($_POST['Submit'])) {
 	$kor_ime = $_POST['kor_ime'];
 	$lozinka = $_POST['lozinka'];
@@ -20,6 +18,7 @@ if (isset($_POST['Submit'])) {
 	$post_broj = $_POST['post_broj'];
 	$adresa = $_POST['adresa'];
 	if(!isset($errorMsg)){
+		//SQL upit za dodavanje korisnika
 		$sql = "insert into kupac(Korisnicko_ime, Lozinka, Ime, Prezime, Telefon, Email, Grad, Post_broj, Adresa) values('".$kor_ime."', '".$lozinka."', '".$ime."', '".$prezime."', '".$telefon."', '".$email."', '".$grad."', '".$post_broj."', '".$adresa."')";
 		$result = mysqli_query($conn, $sql);
 		if($result){
@@ -31,12 +30,12 @@ if (isset($_POST['Submit'])) {
 	}
 }
 ?>
-
 <div class="main">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-6">
 				<a class="btn btn-primary" href="adminkorisnik.php" role="button">Назад</a>
+				<!--forma za dodavanje novog korisnika-->
 				<form class="" action="" method="post" enctype="multipart/form-data">
 					<div class="form-group">
 						<label for="name">корисничко име</label>
@@ -82,7 +81,6 @@ if (isset($_POST['Submit'])) {
 		</div>
 	</div>
 </div>
-
 <?php
 include "footer.php";
 ?>

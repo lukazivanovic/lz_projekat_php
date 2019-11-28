@@ -1,16 +1,13 @@
 <?php
 include "header.php";
-
+//provera administratora
 if (!isset( $_SESSION['login_admin'] ) ) { 
     header("location: loginformaadmin.php");
 }
-
-// Create database connection
+//otvaranje konekcije
 $conn = mysqli_connect("localhost", "root", "", "lz_php_projekat");
 mysqli_set_charset( $conn, 'utf8');
-
 $upload_dir = 'img/kategorije/';
-
 if (isset($_POST['Submit'])) {
 	$name = $_POST['name'];
 	$imgName = $_FILES['image']['name'];
@@ -33,6 +30,7 @@ if (isset($_POST['Submit'])) {
 		}
 	}
 	if(!isset($errorMsg)){
+		//SQL upit za dodavanje nove kategorije
 		$sql = "insert into kategorija(Naziv, Slika)
 				values('".$name."', '".$pic."')";
 		$result = mysqli_query($conn, $sql);
@@ -45,9 +43,9 @@ if (isset($_POST['Submit'])) {
 	}
 }
 ?>
-
 <div class="main">
 	<div class="container">
+		<!--forma za dodavanje nove kategorije-->
 		<div class="row justify-content-center">
 			<div class="col-md-6">
 				<a class="btn btn-primary" href="adminkategorija.php" role="button">Назад</a>
@@ -68,7 +66,6 @@ if (isset($_POST['Submit'])) {
 		</div>
 	</div>
 </div>
-
 <?php
 include "footer.php";
 ?>

@@ -1,16 +1,17 @@
 <?php
 include "header.php";
-
+//provera administratora
 if (!isset( $_SESSION['login_admin'] ) ) { 
     header("location: loginformaadmin.php");
 }?>
 <div class="main">
     <div class="container">
         <?php
+        //otvaranje konekcije
         $mysqli = mysqli_connect("localhost", "root", "", "lz_php_projekat");
         mysqli_set_charset( $mysqli, 'utf8');
         $upload_dir = 'img/proizvodi/';
-
+        //SQL upit za izbor proizvoda
         if (isset($_GET['id'])) {
             $id = $_GET['id'];
             $sql = "select * from proizvod where ID=".$id;
@@ -21,7 +22,7 @@ if (!isset( $_SESSION['login_admin'] ) ) {
                 $errorMsg = 'Could not Find Any Record';
             }
         }
-
+        //definisanje vrednosti za proizvod
         if(isset($_POST['Submit'])){
             $kategorija = $_POST['kategorija'];
             $name = $_POST['name'];
@@ -31,12 +32,10 @@ if (!isset( $_SESSION['login_admin'] ) ) {
             $imgName = $_FILES['image']['name'];
             $imgTmp = $_FILES['image']['tmp_name'];
             $imgSize = $_FILES['image']['size'];
-            
             if($imgName){
                 $imgExt = strtolower(pathinfo($imgName, PATHINFO_EXTENSION));
                 $allowExt  = array('jpeg', 'jpg', 'png', 'gif');
                 $pic = time().'_'.rand(1000,9999).'.'.$imgExt;
-                
                 if(in_array($imgExt, $allowExt)){
                     if($imgSize < 5000000){
                         unlink($upload_dir.$row['Slika']);
@@ -50,8 +49,8 @@ if (!isset( $_SESSION['login_admin'] ) ) {
             }else{
                 $pic = $row['Slika'];
             }
-            
             if(!isset($errorMsg)){
+                //SQL upit za izmenu proizvoda
                 $sql = "update proizvod set Kategorija = '".$kategorija."', Naziv = '".$name."', Opis = '".$opis."', Kolicina = '".$kolicina."', Cena = '".$cena."', Slika = '".$pic."' where ID=".$id;
                 $result = mysqli_query($mysqli, $sql);
                 if($result){
@@ -66,6 +65,7 @@ if (!isset( $_SESSION['login_admin'] ) ) {
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <a class="btn btn-primary" href="adminproizvod.php" role="button">Назад</a>
+                <!--forma za izmenu proizvoda-->
                 <form class="" action="" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="kategorija">Категорија</label>
@@ -115,7 +115,6 @@ if (!isset( $_SESSION['login_admin'] ) ) {
         </div>
     </div>
 </div>
-
 <?php
 include "footer.php";
 ?>

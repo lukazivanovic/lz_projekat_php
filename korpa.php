@@ -1,8 +1,8 @@
 <?php
 include "header.php";
 ?>
-
 <div class="container" style="padding-bottom: 200px;">
+  <!--tabela za prikaz stavki u korpi-->
   <table class="table table-striped table-bordered table-hover table-sm" id="tabela">
     <thead class="thead-dark">
       <tr>
@@ -18,7 +18,7 @@ include "header.php";
     <tbody>
       <?php
       $ukupnaCena = 0;
-
+      //prikaz stavki u korpi
       if(isset($_SESSION['korpa'])){
         foreach($_SESSION['korpa'] as $key=>$predmetUKorpi) {
           echo "<tr>";
@@ -33,12 +33,12 @@ include "header.php";
           echo "</tr>";
         }
       }
-
       if(isset($_POST['buttonRacun'])) {
-        //header("Location: index.php");
+        //otvaranje konekcije
         $conn = mysqli_connect("localhost", "root", "", "lz_php_projekat");
         mysqli_set_charset($conn, 'utf8');
         mysqli_autocommit($conn,FALSE);
+        //SQL upit za ubacivanje korpe u racun
         $sql = "insert into racun(Kupac_naziv, Datum, Ukupna_cena) values('".$_SESSION['login_user']."', '".date("Y-m-d")."', '".$ukupnaCena."')";
         $result = mysqli_query($conn, $sql);
         if(!$result){
@@ -46,7 +46,7 @@ include "header.php";
           exit();
         };
         $racun_id =  $conn->insert_id;
-
+        //ubacivanje stavki korpe u stavke racuna
         foreach($_SESSION['korpa'] as $key=>$predmetUKorpi) {
           $sql1 = "insert into stavke_racuna(Racun_id, Proizvod_id, Proizvod_naziv, Proizvod_cena, Kolicina, Ukupna_cena) values('".$racun_id."', '".$predmetUKorpi[0]."', '".$predmetUKorpi[1]."', '".$predmetUKorpi[3]."', '".$predmetUKorpi[4]."', '".$predmetUKorpi[5]."')";
           $result1 = mysqli_query($conn, $sql1);
@@ -61,13 +61,14 @@ include "header.php";
       <?php } ?>
     </tbody>
   </table>
-
   <?php
+  //prikaz ukupne cene svih stavki u korpi
   if($ukupnaCena > 0){ ?>
     <p class='font-weight-bold'>Укупна цена: <?php echo number_format($ukupnaCena,2); ?> динара</p>
     <p>
       <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">КУПИ</button>
     </p>
+  <!--potvrda kupovine proizvoda u korpi-->
   <div class="collapse" id="collapseExample">
     <div class="alert alert-warning" role="alert">
       <form id="formaKorpa" action="" method="post">
@@ -80,10 +81,10 @@ include "header.php";
     </div>
   </div>
   <?php } else { ?>
+    <!--poruka o praznoj korpi-->
     <div class="alert alert-danger" role="alert">корпа је празна</div>
   <?php } ?>
 </div>
-
 <?php
 include "footer.php";
 ?>

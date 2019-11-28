@@ -1,5 +1,5 @@
 <?php 
-session_start();
+session_start();//pocetak sesije
 ?>
 <!doctype html>
 <html lang="en">
@@ -8,13 +8,18 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="admin/img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="admin/img/favicon.ico" type="image/x-icon">
+    <!--bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--font awesome-->
     <script src="https://kit.fontawesome.com/9333006fb1.js" crossorigin="anonymous"></script>
+    <!--google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <!--css fajl-->
     <link rel="stylesheet" href="css/style.css">
     <title>Музичка продавница</title>
   </head>
   <body>
+    <!--glavna navigacija-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="index.php">
             <img src="admin/img/logo.png" width="30" height="30" class="d-inline-block align-top" alt=""> Музичка продавница
@@ -58,5 +63,5 @@ session_start();
             </ul>
         </div>
     </nav>
-
+    <!--pozadinska slika teksture-->
     <img src="admin/img/tekstura-001-copy.jpg" class="bg">

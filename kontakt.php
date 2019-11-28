@@ -1,7 +1,6 @@
 <?php
 include "header.php";
 ?>
-
 <div class="container">
   <div class="row">
     <!--kontakt podaci-->
@@ -51,7 +50,6 @@ include "header.php";
     </div>
   </div>
 </div>
-
 <script src="js/kontakt.js"></script>
 <?php
 include "footer.php";

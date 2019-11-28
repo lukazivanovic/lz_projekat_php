@@ -1,29 +1,25 @@
 <?php
 include "header.php";
-
+//provera administratora
 if (!isset( $_SESSION['login_admin'])) { 
     header("location: index.php");
 }
-
-// Create database connection
+//otvaranje konekcije
 $connection = mysqli_connect("localhost", "root", "");
-// Selecting Database
 $db = mysqli_select_db($connection, "lz_php_projekat");
-//session_start();// Starting Session
-// Storing Session
+//cuvanje sesije
 $user_check=$_SESSION['login_admin'];
-// SQL Query To Fetch Complete Information Of User
+//SQL upit za izbor administratora
 $ses_sql=mysqli_query($connection, "select * from administrator where Korisnicko_ime='$user_check'");
 $row = mysqli_fetch_assoc($ses_sql);
-
 if(isset($_POST['Submit'])){
     $lozinka1 = $_POST['lozinka1'];
     $lozinka2 = $_POST['lozinka2'];
     $lozinka3 = $_POST['lozinka3'];
-
     if($lozinka1 == $row["Lozinka"]){
         if($lozinka2 == $lozinka3){
             if(!isset($errorMsg)){
+                //SQL upit za izmenu lozinke
                 $sql = "update administrator set Lozinka = '".$lozinka2."' where ID=".$row['ID'];
                 $result = mysqli_query($connection, $sql);
                 if($result){
@@ -37,12 +33,12 @@ if(isset($_POST['Submit'])){
     }
 }
 ?>
-
 <div class="main">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-6">
-				<a class="btn btn-primary" href="profiladmin.php" role="button">Назад</a>
+                <a class="btn btn-primary" href="profiladmin.php" role="button">Назад</a>
+                <!--forma za izmenu lozinke-->
                 <form class="" action="" method="post" enctype="multipart/form-data">
                     <div class="form-group">
 						<label for="name">стара лозинка</label>
@@ -64,7 +60,6 @@ if(isset($_POST['Submit'])){
 		</div>
 	</div>
 </div>
-
 <?php
 include "footer.php";
 ?>

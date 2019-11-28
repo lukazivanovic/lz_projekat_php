@@ -1,18 +1,18 @@
 <?php
 include "header.php";
-
+//provera administratora
 if (!isset( $_SESSION['login_admin'] ) ) { 
     header("location: loginformaadmin.php");
 }?>
-
 <div class="main">
   <div class="container">
     <?php
+    //pocetak konekcije
     $mysqli = mysqli_connect("localhost", "root", "", "lz_php_projekat");
     mysqli_set_charset( $mysqli, 'utf8');
-
     if (isset($_GET['id'])) {
       $id = $_GET['id'];
+      //SQL upit za izbor korisnika
       $sql = "select * from kupac where ID=".$id;
       $result = mysqli_query($mysqli, $sql);
       if (mysqli_num_rows($result) > 0) {
@@ -21,7 +21,7 @@ if (!isset( $_SESSION['login_admin'] ) ) {
         $errorMsg = 'Could not Find Any Record';
       }
     }
-
+    //definisanje podataka
     if(isset($_POST['Submit'])){
       $kor_ime = $_POST['kor_ime'];
       $lozinka = $_POST['lozinka'];
@@ -32,7 +32,7 @@ if (!isset( $_SESSION['login_admin'] ) ) {
       $grad = $_POST['grad'];
       $post_broj = $_POST['post_broj'];
       $adresa = $_POST['adresa'];
-      
+      //SQL upit za izmenu korisnika
       if(!isset($errorMsg)){
         $sql = "update kupac set Korisnicko_ime = '".$kor_ime."', Lozinka = '".$lozinka."', Ime = '".$ime."', Prezime = '".$prezime."', Telefon = '".$telefon."', Email = '".$email."', Grad = '".$grad."', Post_broj = '".$post_broj."', Adresa = '".$adresa."' where ID=".$id;
         $result = mysqli_query($mysqli, $sql);
@@ -48,6 +48,7 @@ if (!isset( $_SESSION['login_admin'] ) ) {
     <div class="row justify-content-center">
       <div class="col-md-6">
         <a class="btn btn-primary" href="adminkorisnik.php" role="button">Назад</a>
+        <!--forma za izmenu podataka o korisniku-->
         <form class="" action="" method="post" enctype="multipart/form-data">
           <div class="form-group">
             <label for="name">Корисничко име</label>

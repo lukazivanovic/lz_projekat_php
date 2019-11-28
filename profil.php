@@ -1,15 +1,14 @@
 <?php
 include "header.php";
-
+//otvaranje konekcije
 $connection = mysqli_connect("localhost", "root", "");
-// Selecting Database
 $db = mysqli_select_db($connection, "lz_php_projekat");
-//session_start();// Starting Session
-// Storing Session
+//cuvanje sesije o korisniku
 $user_check=$_SESSION['login_user'];
-// SQL Query To Fetch Complete Information Of User
+//SQL upit za trazenje korisnika
 $ses_sql=mysqli_query($connection, "select * from kupac where Korisnicko_ime='$user_check'");
 $row = mysqli_fetch_assoc($ses_sql);
+//definisanje varijabli za sesiju korisnika
 $login_session_id =$row['ID'];
 $login_session =$row['Korisnicko_ime'];
 $login_session_lozinka =$row['Lozinka'];
@@ -21,11 +20,10 @@ $login_session_grad =$row['Grad'];
 $login_session_pb =$row['Post_broj'];
 $login_session_adresa =$row['Adresa'];
 ?>
-
+<!--prikaz podataka o logovanom korisniku-->
 <div class="container row justify-content-center" id="profile">
     <div class="col-md-6">
         <p><b>Добро дошли</b></p>
-        <p><i><?php /*echo $login_session;*/ //echo $_SESSION["login_user"]; ?></i></p>
         <p>Корисничко име: <?php echo $login_session; ?></p>
         <p>Име: <?php echo $login_session_ime; ?></p>
         <p>Презиме: <?php echo $login_session_prezime; ?></p>
@@ -39,7 +37,6 @@ $login_session_adresa =$row['Adresa'];
         <p><a class="btn btn-primary" href="profilpassword.php"><i class="fas fa-key"></i> измени лозинку</a></p>
     </div>
 </div>
-
 <?php
 include "footer.php";
 ?>

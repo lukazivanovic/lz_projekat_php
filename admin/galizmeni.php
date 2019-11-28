@@ -1,18 +1,19 @@
 <?php
 include "header.php";
-
+//provera administratora
 if (!isset( $_SESSION['login_admin'] ) ) { 
     header("location: loginformaadmin.php");
 }?>
 <div class="main">
   <div class="container">
     <?php
+    //pocetak konekcije
     $mysqli = mysqli_connect("localhost", "root", "", "lz_php_projekat");
     mysqli_set_charset( $mysqli, 'utf8');
     $upload_dir = 'img/carousel/';
-
     if (isset($_GET['id'])) {
       $id = $_GET['id'];
+      //SQL upit za izbor galerije
       $sql = "select * from galerija where ID=".$id;
       $result = mysqli_query($mysqli, $sql);
       if (mysqli_num_rows($result) > 0) {
@@ -21,7 +22,6 @@ if (!isset( $_SESSION['login_admin'] ) ) {
         $errorMsg = 'Could not Find Any Record';
       }
     }
-
     if(isset($_POST['Submit'])){
       $name = $_POST['name'];
       $opis = $_POST['opis'];
@@ -29,7 +29,6 @@ if (!isset( $_SESSION['login_admin'] ) ) {
       $imgName = $_FILES['image']['name'];
       $imgTmp = $_FILES['image']['tmp_name'];
       $imgSize = $_FILES['image']['size'];
-
       if($imgName){
         $imgExt = strtolower(pathinfo($imgName, PATHINFO_EXTENSION));
         $allowExt  = array('jpeg', 'jpg', 'png', 'gif');
@@ -47,8 +46,8 @@ if (!isset( $_SESSION['login_admin'] ) ) {
       }else{
         $pic = $row['Slika'];
       }
-
       if(!isset($errorMsg)){
+        //SQL upit za izmenu slike
         $sql = "update galerija set Naslov = '".$name."', Opis = '".$opis."', Slika = '".$pic."', Alt = '".$alt."' where ID=".$id;
         $result = mysqli_query($mysqli, $sql);
         if($result){
@@ -60,6 +59,7 @@ if (!isset( $_SESSION['login_admin'] ) ) {
       }
     }
     ?>
+    <!--forma za izmenu slike u galeriji-->
     <div class="row justify-content-center">
       <div class="col-md-6">
         <a class="btn btn-primary" href="admingalerija.php" role="button">Назад</a>

@@ -1,18 +1,18 @@
 <?php
 include "header.php";
+//otvaranje konekcije
 $id = $_GET['id'] ?? '';
- 
 $mysqli = new mysqli("localhost", "root", "", "lz_php_projekat");
 mysqli_set_charset( $mysqli, 'utf8');
 $query = "SELECT * FROM proizvod WHERE ID=$id";
 $result = $mysqli->query($query);
+//SQL upit za prikaz proizvoda
 $queryKat = "SELECT kategorija.ID, kategorija.Naziv, proizvod.Kategorija FROM kategorija JOIN proizvod ON kategorija.ID = proizvod.Kategorija WHERE proizvod.ID = $id";
 $resultKat = $mysqli->query($queryKat);
-
 $row = $result->fetch_array();
 $rowKat = $resultKat->fetch_array();
 ?>
-
+<!---navigacija kroz prodavnicu-->
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="prodavnica.php">Продавница</a></li>
@@ -20,7 +20,7 @@ $rowKat = $resultKat->fetch_array();
     <li class="breadcrumb-item active" aria-current="page"><?php echo $row['Naziv']; ?></li>
   </ol>
 </nav>
-
+<!--prostor za prikaz detalja pojedinacnog proizvoda-->
 <div class="container galerija">
   <div class="proizvodSlika">
     <div class="row">
@@ -50,21 +50,16 @@ $rowKat = $resultKat->fetch_array();
   <p class="text-justify" style="white-space: pre-line;"><?php echo $row['Opis']; ?></p>
   </div>
 </div>
-
-<!--<img id="myImg" src="img_snow.jpg" alt="Snow" style="width:100%;max-width:300px">-->
-<!-- The Modal -->
+<!-- modal za posebni prikaz slike proizvoda -->
 <div id="myModal" class="modal">
-  <!-- The Close Button -->
   <span class="close">&times;</span>
-  <!-- Modal Content (The Image) -->
   <img class="modal-content" id="img01">
-  <!-- Modal Caption (Image Text) -->
   <div id="caption"></div>
 </div>
-
+<!--uvoz sktripte za prikaz modala-->
 <script src="js/proizvod.js"></script>
-
 <?php
+//zatvaranje konekcije
 $result->close(); 
 $mysqli->close();
 include "footer.php";

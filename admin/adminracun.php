@@ -1,23 +1,25 @@
 <?php
 include "header.php";
-
+//provera administratora
 if (!isset( $_SESSION['login_admin'] ) ) { 
     header("location: loginformaadmin.php");
 }?>
 <div class=container id="prodavnica">
   <div class="row d-flex justify-content-center">
     <?php 
+    //pocetak konekcije
     $mysqli = new mysqli("localhost", "root", "", "lz_php_projekat");
     mysqli_set_charset( $mysqli, 'utf8');
     $query = "SELECT * FROM racun";
     $result = $mysqli->query($query);
-
     if(isset($_GET['delete'])){
       $id = $_GET['delete'];
+      //SQL upit za izbor racuna
       $sql = "select * from racun where ID = ".$id;
       $result = mysqli_query($mysqli, $sql);
       if(mysqli_num_rows($result) > 0){
         $row = mysqli_fetch_assoc($result);
+        //SQL upiti za brisanje racuna i stavki racuna
         $sql = "delete from racun where ID=".$id;
         $sql1 = "delete from stavke_racuna where Racun_id=".$id;
         if(mysqli_query($mysqli, $sql) && mysqli_query($mysqli, $sql1)){
@@ -27,6 +29,7 @@ if (!isset( $_SESSION['login_admin'] ) ) {
     }
     ?>
     <a class="btn btn-primary mr-md-3" href="./" role="button">Назад</a>
+    <!--tabela za prikaz svih racuna-->
     <table class="table table-striped table-bordered table-hover table-sm" id="tabela">
       <thead class="thead-dark">
         <tr>
@@ -55,12 +58,12 @@ if (!isset( $_SESSION['login_admin'] ) ) {
       </tbody>
     </table>
     <?php
+    //zatvaranje konekcije
     $result->close();
     $mysqli->close();
     ?>
   </div>
 </div>
-
 <?php
 include "footer.php";
 ?>

@@ -1,17 +1,17 @@
 <?php
 include "header.php";
-
+//provera administratora
 if (!isset( $_SESSION['login_admin'] ) ) { 
     header("location: loginformaadmin.php");
 }?>
 <div class="main">
   <div class="container">
     <?php
+    //orvaranje konekcije
     $mysqli = mysqli_connect("localhost", "root", "", "lz_php_projekat");
     mysqli_set_charset( $mysqli, 'utf8');
-
     $upload_dir = 'img/proizvodi/';
-
+    //SQL upit za prikaz jednog proizvoda
     if (isset($_GET['id'])) {
       $id = $_GET['id'];
       $sql = "select * from proizvod where ID=".$id;
@@ -23,9 +23,8 @@ if (!isset( $_SESSION['login_admin'] ) ) {
       }
     }
     ?>
-
     <a class="btn btn-primary" href="adminproizvod.php" role="button">Назад</a>
-
+    <!--prikaz jednog proizvoda-->
     <div class="proizvodSlika">
       <div class="row">
         <div class="col-sm-12 col-md-6">
@@ -52,7 +51,6 @@ if (!isset( $_SESSION['login_admin'] ) ) {
     </div>
   </div>
 </div>
-
 <?php
 include "footer.php";
 ?>

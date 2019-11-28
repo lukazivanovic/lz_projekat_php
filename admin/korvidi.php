@@ -1,18 +1,18 @@
 <?php
 include "header.php";
-
+//provera administratora
 if (!isset( $_SESSION['login_admin'] ) ) { 
     header("location: loginformaadmin.php");
 }?>
-
 <div class="main">
   <div class="container">
     <?php
+    //pocetak konekcije
     $mysqli = mysqli_connect("localhost", "root", "", "lz_php_projekat");
     mysqli_set_charset( $mysqli, 'utf8');
-
     if (isset($_GET['id'])) {
       $id = $_GET['id'];
+      //SQL upit za izbor korisnika
       $sql = "select * from kupac where ID=".$id;
       $result = mysqli_query($mysqli, $sql);
       if (mysqli_num_rows($result) > 0) {
@@ -22,7 +22,7 @@ if (!isset( $_SESSION['login_admin'] ) ) {
       }
     }
     ?>
-
+    <!--prikaz podataka o korisniku-->
     <div class="row justify-content-center">
       <div class="col-md-6">
         <a class="btn btn-primary" href="adminkorisnik.php" role="button">Назад</a>

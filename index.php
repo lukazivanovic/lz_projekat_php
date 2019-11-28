@@ -1,7 +1,6 @@
 <?php
 include "header.php";
 ?>
-
     <!--velika slika na pocetnoj strani-->
     <div id="cover">
         <div id="banner">
@@ -9,7 +8,6 @@ include "header.php";
             <h1>Музичка продавница</h1>
         </div>
     </div>
-
     <div class="main">
         <div class="container">
             <div id="content">
@@ -61,7 +59,6 @@ include "header.php";
         </div>
     </div>
 </div>
-
 <?php
 include "footer.php";
 ?>
