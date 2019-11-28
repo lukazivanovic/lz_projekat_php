@@ -1,6 +1,5 @@
 <?php
 include "header.php";
-//include "sesija.php";
 
 $connection = mysqli_connect("localhost", "root", "");
 // Selecting Database

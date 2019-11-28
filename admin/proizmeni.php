@@ -104,7 +104,7 @@ if (!isset( $_SESSION['login_admin'] ) ) {
                         <label for="image">изабери слику</label>
                         <div>
                             <img src="<?php echo $upload_dir.$row['Slika'] ?>" width="100">
-                            <input type="file" class="form-control" name="image" value="" required>
+                            <input type="file" class="form-control" name="image" value="">
                         </div>
                     </div>
                     <div class="form-group">
