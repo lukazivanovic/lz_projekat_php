@@ -47,6 +47,8 @@ Code by Comtrade, Обука за ПХП програмирање, Група 2
 
 Слике се налазе у директоријуму "admin/img/".
 
+Почетна страна за администраторе је "lz_projekat_php/admin/index.php".
+
 Покретање базе:
 - database: "lz_php_projekat"
 - host: "localhost"
