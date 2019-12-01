@@ -58,5 +58,3 @@ Code by Comtrade, Обука за ПХП програмирање, Група 2
 - host: "localhost"
 - username: "root"
 - password: ""
-
-Демонстрација пројекта: https://lz-demo.000webhostapp.com/
