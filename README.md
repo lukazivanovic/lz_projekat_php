@@ -10,6 +10,14 @@ Code by Comtrade, Обука за ПХП програмирање, Група 2
 
 Београд, 2019.
 
+![Alt text](Screenshot-MP.png?raw=true "home page")
+
+![Alt text](Screenshot-MP2.png?raw=true "product info")
+
+![Alt text](Screenshot-MP3.png?raw=true "search result")
+
+![Alt text](Screenshot-MP4.png?raw=true "admin page")
+
 У реализацији овог пројекта коришћене су следеће технологије:
 - HTML
 - CSS, Bootstrap
