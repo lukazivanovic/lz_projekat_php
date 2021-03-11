@@ -18,25 +18,32 @@ if (isset($_POST['Submit'])) {
 	$imgName = $_FILES['image']['name'];
 	$imgTmp = $_FILES['image']['tmp_name'];
 	$imgSize = $_FILES['image']['size'];
-	if(empty($name)){
-		$errorMsg = 'Please input name';
-	}else{
-		$imgExt = strtolower(pathinfo($imgName, PATHINFO_EXTENSION));
-		$allowExt  = array('jpeg', 'jpg', 'png', 'gif');
-		$pic = time().'_'.rand(1000,9999).'.'.$imgExt;
-		if(in_array($imgExt, $allowExt)){
-			if($imgSize < 5000000){
-				move_uploaded_file($imgTmp ,$upload_dir.$pic);
-			}else{
-				$errorMsg = 'Image too large';
-			}
-		}else{
-			$errorMsg = 'Please select a valid image';
+
+	$error = 1;
+	$cenaMsg = "";
+	$slikaMsg = "";
+
+	$imgExt = strtolower(pathinfo($imgName, PATHINFO_EXTENSION));
+	$allowExt  = array('jpeg', 'jpg', 'png', 'gif');
+	$pic = time().'_'.rand(1000,9999).'.'.$imgExt;
+	if(in_array($imgExt, $allowExt)){
+		if($imgSize > 5000000){
+			$error = 0;
+			$slikaMsg .= ' Image too large';
 		}
+	}else{
+		$error = 0;
+		$slikaMsg .= ' Please select a valid image';
 	}
-	if(!isset($errorMsg)){
+	if(!is_numeric($cena)){
+		$error = 0;
+		$cenaMsg .= " Cena mora biti broj.";
+	}
+	
+	if($error==1){
 		//SQL upit za dodavanje proizvoda
 		$sql = "insert into proizvod(Kategorija, Naziv, Opis, Kolicina, Cena, Slika) values('".$kategorija."', '".$name."', '".$opis."', '".$kolicina."', '".$cena."', '".$pic."')";
+		move_uploaded_file($imgTmp ,$upload_dir.$pic);
 		$result = mysqli_query($conn, $sql);
 		if($result){
 			$successMsg = 'New record added successfully';
@@ -44,7 +51,7 @@ if (isset($_POST['Submit'])) {
 		}else{
 			$errorMsg = 'Error '.mysqli_error($conn);
 		}
-	}		
+	}
 }
 ?>
 <div class="main">
@@ -53,6 +60,7 @@ if (isset($_POST['Submit'])) {
 			<div class="col-md-6">
 				<a class="btn btn-primary" href="adminproizvod.php" role="button">Назад</a>
 				<!--forma za dodavanje novog proizvoda-->
+
 				<form class="" action="" method="post" enctype="multipart/form-data">
 					<div class="form-group">
 						<label for="kategorija">Категорија</label>
@@ -60,9 +68,14 @@ if (isset($_POST['Submit'])) {
 						$sqlKat=mysqli_query($conn, "SELECT * FROM kategorija");
 						if(mysqli_num_rows($sqlKat)){
 							$selectKat= '<select class="custom-select" id="kategorija" name="kategorija">';
-							$selectKat.='<option selected></option>';
+							$selektovana="";
 							while($rs=mysqli_fetch_array($sqlKat)){
-								$selectKat.='<option value="'.$rs['ID'].'">'.$rs['Naziv'].'</option>';
+							if(isset($kategorija)){
+							if($kategorija==$rs['ID']){
+								$selektovana="selected";
+							}else $selektovana="";
+							}
+								$selectKat.="<option value=$rs[ID] $selektovana> $rs[Naziv]</option>";
 							}
 						}
 						$selectKat.='</select>';
@@ -71,19 +84,26 @@ if (isset($_POST['Submit'])) {
 					</div>
 					<div class="form-group">
 						<label for="name">назив</label>
-						<input type="text" class="form-control" name="name" placeholder="назив" value="" required>
+						<input type="text" class="form-control" name="name" placeholder="назив" value="<?php if(!empty($name)) echo $name; ?>" required>
 					</div>
 					<div class="form-group">
 						<label for="name">опис</label>
-						<textarea type="text" class="form-control" name="opis" placeholder="опис" rows="5"></textarea>
+						<textarea type="text" class="form-control" name="opis" placeholder="опис" rows="5" required></textarea>
 					</div>
 					<div class="form-group">
 						<label for="name">количина</label>
-						<input type="number" class="form-control" name="kolicina" placeholder="количина" value="">
+						<input type="number" class="form-control" name="kolicina" placeholder="количина" value="" required>
 					</div>
 					<div class="form-group">
 						<label for="name">цена</label>
-						<input type="number" class="form-control" name="cena" placeholder="цена" value="">
+						<?php
+							if(!empty($cenaMsg)){
+							echo "<div class='alert alert-danger' role='alert'>";
+								echo $cenaMsg;
+							echo "</div>";
+							}
+						?>
+						<input type="text" class="form-control" name="cena" placeholder="цена" value="" required>
 					</div>
 					<div class="form-group">
 						<label for="image">изабери слику</label>

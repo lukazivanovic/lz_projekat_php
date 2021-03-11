@@ -9,7 +9,7 @@ if (isset($_POST['submit'])) {
     {
         //definisanje korisnickog imena i lozinke
         $username=$_POST['username'];
-        $password=$_POST['password'];
+        $password=md5($_POST['password']);
         //otvaranje konekcije
         $connection = mysqli_connect("localhost", "root", "");
         $username = stripslashes($username);
